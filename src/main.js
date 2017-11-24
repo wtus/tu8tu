@@ -6,7 +6,7 @@ import router from './router'
 import api from './api/api'
 import store from './store'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 Vue.mixin({
   beforeCreate() {
@@ -14,7 +14,7 @@ Vue.mixin({
       this.$api = api
     }
   }
-})
+});
 
 /* eslint-disable no-new */
 new Vue({
@@ -22,6 +22,6 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: { App },
+  components: {App},
   render: h => h(App)
-})
+});
