@@ -13,7 +13,6 @@ export function fetch(options) {
         "appostype": "1",
         "version": "2.5",
         "channel": "to8toapp",
-        "style": "13",
         "appid": "15",
         "house_type": "2",
         "model": "ad"

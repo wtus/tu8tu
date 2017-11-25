@@ -17,6 +17,13 @@ module.exports = {
         pathRewrite: {
           '^/api': ''
         }
+      },
+      '/shejiben': {
+        target: 'http://www.shejiben.com/mobile/index.php',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/shejiben': ''
+        }
       }
     },
 
