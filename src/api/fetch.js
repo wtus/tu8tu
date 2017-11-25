@@ -28,7 +28,7 @@ export function fetch(options) {
       options: {},
       params: getParams,
       data: postData,
-      timeout: 10 * 1000
+      timeout: 30 * 1000
     });
 
     if (options.method.toLowerCase() === 'post') {

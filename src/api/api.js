@@ -76,6 +76,78 @@ export default {
       }
     });
   },
+
+  //获取图库-套图
+  getGallerySetsPicData() {
+    return fetch({
+      url: url.pre_url,
+      method: 'post',
+      data: {
+        action: "setsList",
+        initialize: "0",
+        perPage: "30",
+        style: "",
+        to8to_token: "",
+        homeType: "",
+        area: "",
+        color: "",
+        uid: "",
+        page: "1",
+        paging: "true",
+        model: "images",
+      }
+    });
+  },
+
+  //获取图库-单图
+  getGalleryOnePicData() {
+    return fetch({
+      url: url.pre_url,
+      method: 'post',
+      data: {
+        action: "list",
+        initialize: "0",
+        perPage: "30",
+        style: "",
+        to8to_token: "",
+        space: "",
+        color: "",
+        local: "",
+        uid: "",
+        page: "1",
+        channel: "to8toapp",
+        paging: "true",
+        model: "images",
+      }
+    });
+  },
+
+  //获取装修公司列表
+  getDecorationConpanyList() {
+    return fetch({
+      url: url.pre_url,
+      method: 'post',
+      data: {
+        action: "Index",
+        comStyle: "0",
+        longitude: "102.531633",
+        perPage: "20",
+        appid: "15",
+        cityName: "深圳",
+        to8to_token: "",
+        comType: "0",
+        price: "0",
+        townId: "0",
+        withCase: "1",
+        latitude: "24.325026",
+        uid: "",
+        type: "3",
+        page: "1",
+        paging: "true",
+        model: "company",
+      }
+    });
+  },
 }
 
 

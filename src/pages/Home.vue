@@ -29,7 +29,7 @@
       }
     },
     mounted() {
-      this.$api.getGallery3DData().then(function (data) {
+      this.$api.getDecorationConpanyList().then(function (data) {
         console.log(data)
       }).catch(function (err) {
         console.log('错误i')
