@@ -29,7 +29,7 @@
       }
     },
     mounted() {
-      this.$api.getGallery().then(function (data) {
+      this.$api.getCarouselData().then(function (data) {
         console.log(data)
       }).catch(function (err) {
         console.log('错误i')

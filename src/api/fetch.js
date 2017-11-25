@@ -6,16 +6,16 @@ export function fetch(options) {
       headers: {},
       options: {},
       params:{
-        "apkPackageName": "com.to8to.housekee",
+        apkPackageName: "com.to8to.housekeeper",
         "imei": "869677028151723",
         "systemversion": "21",
         "appversion": "5.3.0",
         "appostype": "1",
         "version": "2.5",
-        "channel": "to8toapp",
         "appid": "15",
         "house_type": "2",
-        "model": "ad"
+        "model": "ad",
+        "channel": "to8toapp",
       },
       timeout: 10 * 1000
     });
