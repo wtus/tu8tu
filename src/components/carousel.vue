@@ -1,8 +1,9 @@
 <template>
-  <div class="banner-component">
+  <div class="carousel-component">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="x in listImg" :style="{ backgroundImage: 'url(' + x + ')' }">1</div>
+        <div class="swiper-slide" v-for="x in listImg"
+             :style="{ backgroundImage: 'url(' + x + ')' }"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -14,7 +15,7 @@
   import 'swiper/dist/css/swiper.min.css'
 
   export default {
-    name: 'banner',
+    name: 'carousel',
     props: {
       listImg: {
         type: [Array],
@@ -25,9 +26,10 @@
       var swiper = new Swiper('.swiper-container', {
         slidesPerView: 1,
         autoplay: true,
+        loop:true,
         pagination: {
           el: '.swiper-pagination',
-          clickable: true,
+          clickable: true
         },
         on: {
           tap: function () {
@@ -42,8 +44,37 @@
 
 </script>
 
-<style>
-  .banner-component {
-    background-color: white;
+<style >
+  .carousel-component {
+    background-color: #ff7786;
+    width:100%;
+    height:300px;
   }
+  .swiper-wrapper {
+    background-color: white;
+    width:100%;
+    height:300px;
+  }
+
+  .swiper-slide {
+    background-color: blueviolet;
+    width: 100%;
+    height:100%;
+  }
+
+
+  .swiper-pagination{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .swiper-pagination-bullet{
+    background: #3be23a
+  }
+
+  .swiper-pagination-bullet-active {
+    background:white;
+    width: 15px;
+    border-radius: 20%;
+  }
+
 </style>

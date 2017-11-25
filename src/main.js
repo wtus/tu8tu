@@ -6,6 +6,8 @@ import router from './router'
 import api from './api/api'
 import store from './store'
 
+import carousel from './components/carousel.vue'
+
 Vue.config.productionTip = false;
 
 Vue.mixin({
@@ -15,6 +17,8 @@ Vue.mixin({
     }
   }
 });
+
+Vue.component(carousel.name, carousel)
 
 /* eslint-disable no-new */
 new Vue({
