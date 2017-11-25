@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <h2>imgcard</h2>
+    <imgcard ></imgcard>
     <h2>textimg</h2>
     <textimg ></textimg>
     <h2>轮播2</h2>
