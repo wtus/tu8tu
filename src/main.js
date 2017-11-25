@@ -10,6 +10,7 @@ import carousel from './components/carousel.vue'
 import carousel2 from './components/carousel2.vue'
 import textimg from './components/textimg.vue'
 import imgcard from './components/imgcard.vue'
+import rankbar from './components/rankbar.vue'
 
 Vue.config.productionTip = false;
 
@@ -25,6 +26,7 @@ Vue.component(carousel.name, carousel);
 Vue.component(carousel2.name, carousel2);
 Vue.component(textimg.name, textimg);
 Vue.component(imgcard.name, imgcard);
+Vue.component(rankbar.name, rankbar);
 
 /* eslint-disable no-new */
 new Vue({

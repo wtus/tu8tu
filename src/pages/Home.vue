@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <h2>星评条</h2>
+    <rankbar></rankbar>
     <h2>imgcard</h2>
     <imgcard></imgcard>
     <h2>textimg</h2>
@@ -14,7 +16,10 @@
 </template>
 
 <script>
+  import Rankbar from "../components/rankbar.vue";
+
   export default {
+    components: {Rankbar},
     name: 'HelloWorld',
     data() {
       return {
