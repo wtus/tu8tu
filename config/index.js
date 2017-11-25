@@ -12,10 +12,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://news-at.zhihu.com',
+        target: 'http://mobileapi.to8to.com/index.php',
         changeOrigin: true,
         pathRewrite: {
-          '^/api': '/api/4'
+          '^/api': ''
         }
       }
     },

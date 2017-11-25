@@ -4,6 +4,7 @@ export function fetch(options) {
   return new Promise((resolve, reject) => {
     const instance = axios.create({
       headers: {},
+      options: {},
       timeout: 10 * 1000
     });
 
