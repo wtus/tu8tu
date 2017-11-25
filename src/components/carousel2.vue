@@ -115,6 +115,7 @@
 
   .text2 {
     color: #e2d9e2;
+    font-size: x-small;
   }
 
 </style>

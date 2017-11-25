@@ -1,11 +1,13 @@
 <template>
   <div class="home">
-
+    <h2>textimg</h2>
+    <textimg ></textimg>
+    <h2>轮播2</h2>
+    <carousel2 :listImg="imgs"></carousel2>
     <h1>{{ msg }}</h1>
     <!--<carousel :listImg="imgs"></carousel>-->
 
-    <h2>轮播2</h2>
-    <carousel2 :listImg="imgs"></carousel2>
+
   </div>
 </template>
 
