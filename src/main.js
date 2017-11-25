@@ -7,6 +7,7 @@ import api from './api/api'
 import store from './store'
 
 import carousel from './components/carousel.vue'
+import carousel2 from './components/carousel2.vue'
 
 Vue.config.productionTip = false;
 
@@ -18,7 +19,8 @@ Vue.mixin({
   }
 });
 
-Vue.component(carousel.name, carousel)
+Vue.component(carousel.name, carousel);
+Vue.component(carousel2.name, carousel2);
 
 /* eslint-disable no-new */
 new Vue({

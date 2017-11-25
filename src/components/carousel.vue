@@ -48,7 +48,6 @@
   .carousel-component {
     background-color: #ff7786;
     width:100%;
-    height:300px;
   }
   .swiper-wrapper {
     background-color: white;
