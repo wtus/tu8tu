@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h2>星评条</h2>
-    <rankbar></rankbar>
+    <rankbar :sore="2.6" starSize="5"></rankbar>
     <h2>imgcard</h2>
     <imgcard></imgcard>
     <h2>textimg</h2>
