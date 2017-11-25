@@ -7,7 +7,7 @@
     <h2>轮播2</h2>
     <carousel2 :listImg="imgs"></carousel2>
     <h1>{{ msg }}</h1>
-    <!--<carousel :listImg="imgs"></carousel>-->
+    <carousel :listImg="imgs"></carousel>
 
 
   </div>

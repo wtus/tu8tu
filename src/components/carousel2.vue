@@ -4,7 +4,7 @@
       <span>装修案例</span>
       <span>更多</span>
     </div>
-    <div class="swiper-container">
+    <div class="carousel2-swiper-container">
       <div class="swiper-wrapper">
 
         <div class="swiper-slide" v-for="x in listImg">
@@ -35,7 +35,7 @@
       }
     },
     mounted() {
-      var swiper = new Swiper('.swiper-container', {
+      var swiper = new Swiper('.carousel2-swiper-container', {
         slidesPerView: "auto",
         spaceBetween: 30,
         freeMode: true,
