@@ -37,8 +37,9 @@ export default {
       }
     });
   },
+
   //获取图库-定制
-  getGallery() {
+  getGalleryCustomData() {
     return fetch({
       url: url.pre_url2,
       method: 'get',
@@ -54,8 +55,27 @@ export default {
         page: 1,
       }
     });
-  }
+  },
 
+  //获取图库-全景
+  getGallery3DData() {
+    return fetch({
+      url: url.pre_url,
+      method: 'post',
+      data: {
+        action: "threedlist",
+        initialize: "0",
+        style: "",
+        to8to_token: "",
+        perpage: 20,
+        uid: "",
+        house_type: "",
+        page: 1,
+        paging: true,
+        model: "images",
+      }
+    });
+  },
 }
 
 

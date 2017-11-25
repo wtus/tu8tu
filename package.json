@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "qs": "^6.5.1",
     "swiper": "^4.0.6",
     "vue": "^2.5.2",
     "vue-lazyload": "^1.1.4",
