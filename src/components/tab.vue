@@ -10,6 +10,8 @@
     name: 'tab',
     props: {
       tabTitle: {type: String, required: true},
+      aIcon: {type: String, required: true},
+      nIcon: {type: String, required: true},
       selected: {type: Boolean, default: false},
     },
     mounted() {

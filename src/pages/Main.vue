@@ -1,13 +1,13 @@
 <template>
 
   <tabbar class="tabbar">
-    <tab tabTitle="首页">
+    <tab tabTitle="首页" nIcon="./static/main_tab_home_n.png" aIcon="./static/main_tab_home_p.png">
       首页<br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>
     </tab>
-    <tab tabTitle="图库">图库</tab>
-    <tab tabTitle="新房"></tab>
-    <tab tabTitle="装修公司"><div style="background-color: cyan">装修公司</div></tab>
-    <tab tabTitle="我的">我的</tab>
+    <tab tabTitle="图库" nIcon="../static/main_tab_pic_n.png" aIcon="../static/main_tab_pic_p.png">图库</tab>
+    <tab tabTitle="新房" nIcon="../static/icon_newhouse_p.png" aIcon="../static/icon_newhouse_p.png"></tab>
+    <tab tabTitle="装修公司" nIcon="../static/main_tab_company_n.png" aIcon="../static/main_tab_company_p.png" ><div style="background-color: cyan">装修公司</div></tab>
+    <tab tabTitle="我的"  nIcon="../static/main_tab_my_n.png" aIcon="../static/main_tab_my_p.png">我的</tab>
 
   </tabbar>
 </template>
