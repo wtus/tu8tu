@@ -2,13 +2,13 @@
   <div class="home">
     <h2>tab</h2>
     <tabbar>
-      <tab :title="1">fsaddd</tab>
-      <tab :title="2">ssss</tab>
-      <tab :title="3">aaa</tab>
-      <tab :title="4"></tab>
+      <tab tabTitle="1">fsaddd</tab>
+      <tab tabTitle="2">ssss</tab>
+      <tab tabTitle="3">aaa</tab>
+      <tab tabTitle="4">tttt</tab>
     </tabbar>
     <h2>星评条</h2>
-    <rankbar :sore="2.6" starSize="5"></rankbar>
+    <rankbar :sore="2.6" :starSize="5"></rankbar>
     <h2>imgcard</h2>
     <imgcard></imgcard>
     <h2>textimg</h2>
@@ -17,7 +17,6 @@
     <carousel2 :listImg="imgs"></carousel2>
     <h1>{{ msg }}</h1>
     <carousel :listImg="imgs"></carousel>
-
 
   </div>
 </template>

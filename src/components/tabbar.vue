@@ -2,9 +2,9 @@
   <div class="tabbar-component">
     <div class="tabs">
       <ul>
-        <li v-for="tab in tabs" :class="{'is-active':tab.selected===true}"
-            @click="selectTab(tab.title)"
-        >{{tab.title}}
+        <li v-for="tab in tabs" :class="{'is-active':tab.isActive===true}"
+            @click="selectTab(tab.tabTitle)"
+        >{{tab.tabTitle}}
         </li>
       </ul>
     </div>
@@ -21,7 +21,7 @@
     props: {},
     mounted() {
       this.tabs = this.$children
-      this.tabs[0].selected = true
+      this.tabs[0].isActive = true
     },
     computed: {},
     data() {
@@ -32,7 +32,7 @@
     methods: {
       selectTab(selectName) {
         this.tabs.forEach(function (tab) {
-          tab.selected = (selectName == tab.title)
+          tab.isActive = (selectName == tab.tabTitle)
         })
       }
     }

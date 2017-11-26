@@ -1,6 +1,8 @@
 <template>
   <div class="tab-component">
-    <div v-show="selected"><slot></slot></div>
+    <div v-show="isActive">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -9,13 +11,13 @@
   export default {
     name: 'tab',
     props: {
-      title: {type: String, required: true},
+      tabTitle: {type: String, required: true},
       selected: {type: Boolean, default: false},
     },
     mounted() {
+      this.isActive = this.selected
     },
-    computed: {
-    },
+    computed: {},
     data() {
       return {
         isActive: false
