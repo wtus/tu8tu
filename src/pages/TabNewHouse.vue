@@ -1,18 +1,18 @@
 <style lang="stylus" scoped>
-    .TabPic-component {
+    .TabNewHouse-component {
+        background-color: #ff4977;
     }
 </style>
 
 <template>
-    <div class="TabPic-component">
-      图库
+    <div class="TabNewHouse-component">
     </div>
 </template>
 
 <script>
 
     export default {
-        name: 'TabPic',
+        name: 'TabNewHouse',
         props: {},
         mounted() {
         },

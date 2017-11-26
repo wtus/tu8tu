@@ -18,6 +18,7 @@ import TabHome from './pages/TabHome.vue'
 import TabPic from './pages/TabPic.vue'
 import TabCompany from './pages/TabCompany.vue'
 import TabMe from './pages/TabMe.vue'
+import TabNewHouse from './pages/TabNewHouse.vue'
 
 Vue.config.productionTip = false;
 
@@ -40,6 +41,7 @@ Vue.component(TabHome.name, TabHome);
 Vue.component(TabPic.name, TabPic);
 Vue.component(TabCompany.name, TabCompany);
 Vue.component(TabMe.name, TabMe);
+Vue.component(TabNewHouse.name, TabNewHouse);
 
 /* eslint-disable no-new */
 new Vue({
