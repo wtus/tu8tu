@@ -2,7 +2,6 @@
   <div id="app">
     <router-view/>
 
-    </tabbar>
   </div>
 </template>
 
@@ -19,7 +18,6 @@ export default {
     margin: 0;
     height: 100%;
     width: 100%;
-    overflow: auto;
   }
 
 
