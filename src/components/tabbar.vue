@@ -2,12 +2,6 @@
   .tabbar-component {
   }
 
-  .tabPage div{
-    margin-bottom  10%
-    overflow: hidden
-    position absolute
-  }
-
   .tabs
     background-color #6cff3c
     display flex
@@ -21,6 +15,12 @@
       justify-content center
       align-items center
       flex-direction column
+    & > div > div > div
+      imgconfig()
+        background-size 24px 24px
+        background-repeat: no-repeat;
+      background-image url("../assets/main_tab_company_n.png")
+      imgconfig()
     & > div
       flex-direction row
       .newHome
@@ -50,19 +50,20 @@
 
 <template>
   <div class="tabbar-component">
-    <div class="tabPage">
-      <slot></slot>
-      <!--<div>范德萨</div>-->
-      <!--<div>fdhsafa</div>-->
-      <!--<div>放到沙发上</div>-->
-      <!--<div>werewolf</div>-->
-    </div>
+    <slot></slot>
+    <!--<div>范德萨</div>-->
+    <!--<div>fdhsafa</div>-->
+    <!--<div>放到沙发上</div>-->
+    <!--<div>werewolf</div>-->
 
     <div class="tabs">
       <div v-for="tab in tabs" :class="{'is-active':tab.isActive===true}"
            @click="selectTab(tab.tabTitle)">
         <div v-if="tab.tabTitle=='新房'" class="newHome" :class="{'is-active':tab.isActive===true}"></div>
-        <div v-else><img src="../assets/main_tab_company_n.png" style="width: 24px;height: 24px">{{tab.tabTitle}}</div>
+        <div v-else>
+          <div style="width: 24px;height: 24px"></div>
+          {{tab.tabTitle}}
+        </div>
       </div>
     </div>
 

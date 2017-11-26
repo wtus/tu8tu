@@ -1,9 +1,7 @@
 <template>
-  <div class="tab-component">
     <div v-show="isActive">
       <slot v-show="isActive"></slot>
     </div>
-  </div>
 </template>
 
 <script>
