@@ -41,7 +41,6 @@
   }
 </style>
 
-
 <template>
   <div class="tabbar-component">
     <slot></slot>

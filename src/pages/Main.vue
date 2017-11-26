@@ -2,7 +2,7 @@
 
   <tabbar class="tabbar">
     <tab tabTitle="首页" nIcon="./static/main_tab_home_n.png" aIcon="./static/main_tab_home_p.png">
-      首页<br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>
+      <TabHome></TabHome>
     </tab>
     <tab tabTitle="图库" nIcon="../static/main_tab_pic_n.png" aIcon="../static/main_tab_pic_p.png">图库</tab>
     <tab tabTitle="新房" nIcon="../static/icon_newhouse_p.png" aIcon="../static/icon_newhouse_p.png"></tab>

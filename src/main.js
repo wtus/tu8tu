@@ -14,6 +14,11 @@ import rankbar from './components/rankbar.vue'
 import tab from './components/tab.vue'
 import tabbar from './components/tabbar.vue'
 
+import TabHome from './pages/TabHome.vue'
+import TabPic from './pages/TabPic.vue'
+import TabCompany from './pages/TabCompany.vue'
+import TabMe from './pages/TabMe.vue'
+
 Vue.config.productionTip = false;
 
 Vue.mixin({
@@ -31,6 +36,10 @@ Vue.component(imgcard.name, imgcard);
 Vue.component(rankbar.name, rankbar);
 Vue.component(tab.name, tab);
 Vue.component(tabbar.name, tabbar);
+Vue.component(TabHome.name, TabHome);
+Vue.component(TabPic.name, TabPic);
+Vue.component(TabCompany.name, TabCompany);
+Vue.component(TabMe.name, TabMe);
 
 /* eslint-disable no-new */
 new Vue({
