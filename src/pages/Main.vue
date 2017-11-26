@@ -6,7 +6,7 @@
     </tab>
     <tab tabTitle="图库">图库</tab>
     <tab tabTitle="新房"></tab>
-    <tab tabTitle="装修公司">装修公司</tab>
+    <tab tabTitle="装修公司"><div style="background-color: cyan">装修公司</div></tab>
     <tab tabTitle="我的">我的</tab>
 
   </tabbar>

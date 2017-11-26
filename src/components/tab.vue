@@ -1,7 +1,7 @@
 <template>
   <div class="tab-component">
     <div v-show="isActive">
-      <slot></slot>
+      <slot v-show="isActive"></slot>
     </div>
   </div>
 </template>
@@ -30,6 +30,5 @@
 
 <style scoped>
   .tab-component {
-    background-color: white;
   }
 </style>
