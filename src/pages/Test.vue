@@ -30,7 +30,7 @@
       Tabbar,
       Rankbar
     },
-    name: 'HelloWorld',
+    name: 'Test',
     data() {
       return {
         msg: 'Welcome to Your Vue.js App',
