@@ -2,8 +2,8 @@
   <div class="carousel-component">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="x in listImg"
-             :style="{ backgroundImage: 'url(' + x + ')' }"></div>
+        <div class="swiper-slide" v-for="x in listImg" style="background-size: contain"
+             :style="{ backgroundImage: 'url(' + x.imgurl + ')' }"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>

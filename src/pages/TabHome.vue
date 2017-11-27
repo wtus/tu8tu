@@ -1,35 +1,39 @@
 <style lang="stylus" scoped>
-    .TabHome-component {
+  .TabHome-component {
 
-    }
+  }
 </style>
 
 <template>
-    <div class="TabHome-component">
-      首页<br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>首页<br><br><br><br>
-    </div>
+  <div class="TabHome-component">
+    <carousel :listImg="carouselList"></carousel>
+  </div>
 </template>
 
 <script>
 
-    export default {
-        name: 'TabHome',
-        props: {},
-        mounted() {
-          //shit
-          this.$api.getCarouselData().then(function (da) {
-            console.log(da)
-          }).catch(function (err) {
+  import Carousel from "../components/carousel.vue";
 
-            console.log(err)
-          })
-        },
-        computed: {},
-        data() {
-            return {}
-        },
-        methods: {}
-    };
+  export default {
+    components: {Carousel},
+    name: 'TabHome',
+    props: {},
+    mounted() {
+      var vue = this
+      this.$api.getCarouselData().then(function (data) {
+        vue.carouselList = (data.data.bannerInfo)
+      }).catch(function (err) {
+        console.log(err)
+      })
+    },
+    computed: {},
+    data() {
+      return {
+        carouselList: []
+      }
+    },
+    methods: {}
+  };
 
 </script>
 
