@@ -2,7 +2,7 @@
   <div class="carousel-component">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="x in listImg" style="background-size: contain"
+        <div class="swiper-slide" v-for="x in listImg" style="background-size: cover"
              :style="{ backgroundImage: 'url(' + x.imgurl + ')' }"></div>
       </div>
       <div class="swiper-pagination"></div>
@@ -26,8 +26,6 @@
     mounted() {
       var swiper = new Swiper('.swiper-container', {
         slidesPerView: 1,
-        autoplay: true,
-        loop:true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -49,6 +47,7 @@
   .carousel-component {
     background-color: #ff7786;
     width:100%;
+    height:300px;
   }
   .swiper-wrapper {
     background-color: white;
