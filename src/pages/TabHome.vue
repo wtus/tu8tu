@@ -1,6 +1,6 @@
 <style lang="stylus" scoped>
     .TabHome-component {
-        background-color: #ff4977;
+
     }
 </style>
 

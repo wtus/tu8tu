@@ -1,4 +1,4 @@
-<style lang="stylus" scoped>
+<style lang="stylus" type="text/stylus" scoped>
     .TabNewHouse-component {
         background-color: #ff4977;
     }
