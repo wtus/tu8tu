@@ -16,6 +16,7 @@
 
   export default {
     name: 'carousel',
+
     props: {
       listImg: {
         type: [Array],
