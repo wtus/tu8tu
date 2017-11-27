@@ -16,6 +16,13 @@
         name: 'TabHome',
         props: {},
         mounted() {
+          //shit
+          this.$api.getCarouselData().then(function (da) {
+            console.log(da)
+          }).catch(function (err) {
+
+            console.log(err)
+          })
         },
         computed: {},
         data() {
