@@ -1,7 +1,7 @@
 <style lang="stylus" type="text/stylus" scoped>
   .TabPic-component {
     background-color #0e94e2
-    height 300px
+    margin-bottom 20%
   }
 </style>
 

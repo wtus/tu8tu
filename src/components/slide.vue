@@ -2,6 +2,7 @@
   .slide-component {
     min-height 1px
     background-color mediumvioletred
+    height 300px
   }
 
   .slide-group
@@ -15,6 +16,23 @@
       img
         display block
         width 30%
+
+  .dots
+    transform translateZ(1px)
+    display flex
+    text-align: center
+    font-size: 0
+    .dot
+      background-color blueviolet
+      width 24px
+      margin 0 4px
+      height @width
+      cursor pointer
+      border-radius 50%
+    .active
+      background-color #ff5c8e
+
+
 </style>
 
 <template>
@@ -22,7 +40,11 @@
     <div class="slide-group" ref="slideGroup">
       <slot></slot>
     </div>
-    <div class="dots" v-if="showDot"></div>
+    <div class="dots" v-if="showDot">
+      <span class="dot" v-for="(item,index) in dots"
+            :class="{active:index==currentPageIndex}"
+            @click="clickItem(index)"></span>
+    </div>
   </div>
 </template>
 
@@ -127,8 +149,8 @@
           scrollX: true,
           momentum: false,
           snap: {
-            threshold: 0.5,
-            speed: 400
+            threshold: 0.3,
+            speed: 600
           },
         })
 
@@ -159,6 +181,10 @@
         this._setSlideWidth(true)
         this.slide.refresh()
       },
+      clickItem(index) {
+        console.log("Df")
+        this.slide.goToPage(index, 0, 600)
+      }
     }
   };
 

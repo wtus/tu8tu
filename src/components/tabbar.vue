@@ -44,10 +44,6 @@
 <template>
   <div class="tabbar-component">
     <slot></slot>
-    <!--<div>范德萨</div>-->
-    <!--<div>fdhsafa</div>-->
-    <!--<div>放到沙发上</div>-->
-    <!--<div>werewolf</div>-->
 
     <div class="tabs">
       <div v-for="tab in tabs" :class="{'is-active':tab.isActive===true}"
