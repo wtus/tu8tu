@@ -9,7 +9,9 @@
   <div class="TabPic-component">
     <slide>
       <div v-for="item in items">
-        <img :src="item.picUrl">
+        <a href="item.linkUrl">
+          <img :src="item.picUrl">
+        </a>
       </div>
     </slide>
   </div>

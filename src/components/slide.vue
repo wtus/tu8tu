@@ -1,12 +1,11 @@
 <style lang="stylus" type="text/stylus">
   .slide-component {
-    height 300px
+    min-height 1px
     background-color mediumvioletred
   }
 
   .slide-group
     display flex
-    overflow hidden
     .slider-item
       a
         display block
@@ -40,7 +39,7 @@
       },
       autoPlay: {
         type: Boolean,
-        default: true
+        default: false
       },
       interval: {
         type: Number,
@@ -77,6 +76,7 @@
       })
     },
     activated() {
+      console.log('activated')
       if (this.slide) {
         return
       }
@@ -111,7 +111,6 @@
         this.children = this.$refs.slideGroup.children
         let width = 0
         let slideWidth = this.$refs.slide.clientWidth
-        console.log(this.children)
         for (let i = 0; i < this.children.length; i++) {
           let child = this.children[i]
           addClass(child, 'slide-item')
@@ -128,13 +127,14 @@
           scrollX: true,
           momentum: false,
           snap: {
-            threshold: 0.3,
+            threshold: 0.5,
             speed: 400
           },
         })
 
-        this.slide.on('scrollEnd', this._onScrollEnd())
-        this.slide.on('touchend', () => {
+        this.slide.on('scrollEnd', this._onScrollEnd)
+        this.slide.on('touchEnd', () => {
+          console.log('touchendtouchend')
           if (this.autoplay) {
             this._play()
           }
@@ -148,6 +148,7 @@
         }, this.interval)
       },
       _onScrollEnd() {
+        console.log('_onScrollEnd')
         let pageIndex = this.slide.getCurrentPage().pageX
         this.currentPageIndex = pageIndex
         if (this.autoplay) {
