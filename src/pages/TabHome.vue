@@ -1,12 +1,11 @@
 <style lang="stylus" scoped>
   .TabHome-component {
-
   }
 </style>
 
 <template>
   <div class="TabHome-component">
-    <carousel :listImg="carouselList"></carousel>
+    <!--<carousel :listImg="carouselList"></carousel>-->
   </div>
 </template>
 
