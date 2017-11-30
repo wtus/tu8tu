@@ -6,6 +6,7 @@
 <template>
   <div class="TabHome-component">
     <!--<carousel :listImg="carouselList"></carousel>-->
+    <companyItem></companyItem>
   </div>
 </template>
 

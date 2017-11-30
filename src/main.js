@@ -13,6 +13,7 @@ import imgcard from './components/imgcard.vue'
 import rankbar from './components/rankbar.vue'
 import tab from './components/tab.vue'
 import tabbar from './components/tabbar.vue'
+import companyItem from './components/companyItem.vue'
 
 import TabHome from './pages/TabHome.vue'
 import TabPic from './pages/TabPic.vue'
@@ -42,6 +43,7 @@ Vue.component(TabPic.name, TabPic);
 Vue.component(TabCompany.name, TabCompany);
 Vue.component(TabMe.name, TabMe);
 Vue.component(TabNewHouse.name, TabNewHouse);
+Vue.component(companyItem.name, companyItem);
 
 /* eslint-disable no-new */
 new Vue({
