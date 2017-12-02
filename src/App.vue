@@ -18,7 +18,7 @@ export default {
     margin: 0;
     height: 100vh;
     width: 100vw;
-    overflow: auto;
+    overflow: scroll;
   }
 
 
