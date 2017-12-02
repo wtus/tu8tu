@@ -3,28 +3,27 @@ startX: 0,
   .test2-component {
     background-color black
     display flex
-    flex-direction column
     height 100vh
-    width 100vw
+    flex-direction column
   }
 
-  .content
+  .wrapper
+    background-color cyan
+    overflow hidden
     flex 1
-    background-color whitesmoke
-    div
-      height auto
-      width auto
 
   .navbar
-    height 10%
     background-color #007aff
+    height 10%
 
 </style>
 
 <template>
   <div class="test2-component">
-    <div class="content" ref="content">
-      <div v-for="x in 300" class="ccc" ref="ccc">x{{x}}<br></div>
+    <div class="wrapper" ref="wrapper">
+      <ul class="content" ref="content">
+        <li v-for="x in 60" class="ccc" ref="ccc">x{{x}}<br></li>
+      </ul>
     </div>
     <div class="navbar"></div>
   </div>
@@ -37,16 +36,15 @@ startX: 0,
     name: 'test2',
     props: {},
     mounted() {
-      this.$nextTick(() => {
-        this.slide = new BScroll(this.$refs.content, {
-          startY: 0,
-          startX: 0,
-        });
-
-        this.slide.on('scrollEnd', this.finish)
-
+      if (!this.$refs.wrapper) {
+        return
+      }
+      setTimeout(()=>{
+        this.slide = new BScroll(this.$refs.wrapper, {});
         console.log(this.slide)
-      })
+        this.slide.on('scrollEnd', this.finish)
+      },500)
+
     },
     activated() {
     },

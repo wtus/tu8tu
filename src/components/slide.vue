@@ -23,7 +23,7 @@
     text-align: center
     font-size: 0
     position absolute
-    right  0
+    right 0
     .dot
       background-color blueviolet
       width 24px
