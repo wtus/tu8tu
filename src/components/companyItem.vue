@@ -1,14 +1,15 @@
 <style lang="stylus" type="text/stylus" scoped>
   @import "../../static/comment.styl"
   .companyItem-component {
-    height 20%
     background-color darkgray
     display flex
+    flex-direction column
   }
 
-  .companyItem-component
+  .test1
   .design
     display flex
+    justify-content space-between
 
   .price
     background-color #c7c63a
@@ -22,6 +23,16 @@
 
   .famous
     background-color #3be23a
+  .test1
+    height 20%
+
+  .test2
+    height 20%
+    background-color #ff67cd
+    display grid
+    max-width 600px
+    grid-template-columns  300px 200px 100px
+    grid-template-rows 100px 50px
 
 </style>
 
@@ -33,6 +44,14 @@
         <div class="free"></div>
         <div class="famous"></div>
       </div>
+    </div>
+
+    <div class="test2">
+      <div class="grid-item1"></div>
+      <div class="grid-item2"></div>
+      <div class="grid-item3"></div>
+      <div class="grid-item4"></div>
+      <div class="grid-item5"></div>
     </div>
   </div>
 </template>

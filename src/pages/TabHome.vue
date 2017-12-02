@@ -1,12 +1,26 @@
-<style lang="stylus" scoped>
+<style lang="stylus" type="text/stylus" scoped>
   .TabHome-component {
+    margin: 20px;
   }
+
+  a
+    border: 1px solid red
+    padding: 8px 0
+    text-decoration: none
+    font-size 15px
+    border-radius 40px
+    width 100px
+    height 50px
+    min-height 1px
+
 </style>
 
 <template>
   <div class="TabHome-component">
     <!--<carousel :listImg="carouselList"></carousel>-->
-    <companyItem></companyItem>
+    <a href="">
+      已关注
+    </a>
   </div>
 </template>
 
