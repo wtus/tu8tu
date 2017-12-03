@@ -102,9 +102,15 @@
         for (let i = 0; i < this.children.length; i++) {
           width += this.children[i].clientWidth
         }
-        this.$refs.content.style.width = width+'px'
+        this.$refs.content.style.width = width + 'px'
         this.scroll = new BScroll(this.$refs.wrapper, {
-          scrollX: true
+          scrollX: true,
+          probeType: 3
+        })
+        this.scroll.on('scroll', (x, y) => {
+          console.log(x)
+          console.log(y)
+
         })
         console.log(this.scroll)
       })
