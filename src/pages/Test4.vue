@@ -23,66 +23,35 @@
           display block
           width 80px
           height 80px
+          text-align center
         em
+          display inline-block
           width 100%
           text-align center
 </style>
 
 <template>
   <div class="test4-component">
+
     <div class="wrapper" ref="wrapper">
       <div class="content" ref="content">
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊</li>
-        <li>封杀点击福建师大附近啊aaa</li>
+        <li v-for="x in 300">
+          <a href="">
+            <img src="https://p3.ssl.qhimg.com/t015584deefe3d02084.jpg" alt="">
+          </a>
+          <em>大怪兽</em>
+        </li>
+      </div>
+    </div>
+
+    <div class="wrapper" ref="wrapper2">
+      <div class="content" ref="content2">
+        <li v-for="x in 300">
+          <a href="">
+            <img src="https://p3.ssl.qhimg.com/t015584deefe3d02084.jpg" alt="">
+          </a>
+          <em>小怪兽</em>
+        </li>
       </div>
     </div>
 
@@ -103,9 +72,16 @@
           width += this.children[i].clientWidth
         }
         this.$refs.content.style.width = width + 'px'
+        this.$refs.content2.style.width = width + 'px'
         this.scroll = new BScroll(this.$refs.wrapper, {
           scrollX: true,
-          probeType: 3
+          probeType: 3,
+          click:true
+        })
+        this.scroll2 = new BScroll(this.$refs.wrapper2, {
+          scrollX: true,
+          probeType: 3,
+          click:true
         })
         this.scroll.on('scroll', (x, y) => {
           console.log(x)
