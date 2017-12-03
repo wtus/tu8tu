@@ -3,8 +3,8 @@ startX: 0,
   .test2-component {
     background-color black
     display flex
-    height 100vh
     flex-direction column
+    height 100vh
   }
 
   .wrapper
@@ -15,17 +15,28 @@ startX: 0,
   .navbar
     background-color #007aff
     height 10%
+    display flex
+    a
+      flex 1
+      text-align center
+
 
 </style>
 
 <template>
   <div class="test2-component">
     <div class="wrapper" ref="wrapper">
-      <ul class="content" ref="content">
-        <li v-for="x in 60" class="ccc" ref="ccc">x{{x}}<br></li>
-      </ul>
+      <div class="content wheel" ref="content">
+        <div v-for="x in 3000" @click="goto(x)" class="ccc">x{{x}}<br></div>
+      </div>
     </div>
-    <div class="navbar"></div>
+    <div class="navbar">
+      <a href="s1">  <i class="fa fa-flag"></i><div>1</div></a>
+
+      <a href="s2">2</a>
+      <a href="a3">3</a>
+      <a href="4">4</a>
+    </div>
   </div>
 </template>
 
@@ -39,11 +50,12 @@ startX: 0,
       if (!this.$refs.wrapper) {
         return
       }
-      setTimeout(()=>{
-        this.slide = new BScroll(this.$refs.wrapper, {});
+      setTimeout(() => {
+        this.slide = new BScroll(this.$refs.wrapper, {
+        });
         console.log(this.slide)
         this.slide.on('scrollEnd', this.finish)
-      },500)
+      }, 500)
 
     },
     activated() {
@@ -57,6 +69,10 @@ startX: 0,
     methods: {
       finish() {
         console.log('完成')
+      },
+      goto(x) {
+        console.log(x)
+        this.slide && this.slide.goToPage(0, 100, 400)
       }
     }
   };
