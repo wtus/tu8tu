@@ -1,12 +1,10 @@
 <style lang="stylus" scoped>
   .test4-component {
     background-color: white;
-    width 90vw
   }
 
   .wrapper
     overflow hidden
-    width 100vw
     .content
       white-space nowrap
       overflow hidden
@@ -56,14 +54,23 @@
     </div>
 
     <div @click="goToPage(5)">测试点击滚动</div>
-
+    <scroll-view>
+      <li v-for="x in 300">
+        <a href="">
+          <img src="https://p3.ssl.qhimg.com/t015584deefe3d02084.jpg" alt="">
+        </a>
+        <em>小怪兽</em>
+      </li>
+    </scroll-view>
   </div>
 </template>
 
 <script>
   import BScroll from 'better-scroll'
+  import ScrollView from "../components/scroll-view.vue";
 
   export default {
+    components: {ScrollView},
     name: 'test4',
     props: {},
     mounted() {
@@ -90,7 +97,6 @@
           console.log(y)
 
         })
-        console.log(this.scroll)
       })
     },
     computed: {},
