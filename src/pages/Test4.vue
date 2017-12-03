@@ -55,6 +55,8 @@
       </div>
     </div>
 
+    <div @click="goToPage(5)">测试点击滚动</div>
+
   </div>
 </template>
 
@@ -75,12 +77,12 @@
         this.$refs.content2.style.width = width + 'px'
         this.scroll = new BScroll(this.$refs.wrapper, {
           scrollX: true,
-          probeType: 3,
+          probeType: 1,
           click:true
         })
         this.scroll2 = new BScroll(this.$refs.wrapper2, {
           scrollX: true,
-          probeType: 3,
+          probeType: 1,
           click:true
         })
         this.scroll.on('scroll', (x, y) => {
@@ -95,7 +97,12 @@
     data() {
       return {}
     },
-    methods: {}
+    methods: {
+      goToPage(x) {
+        this.scroll.scrollTo(-100,0,400)
+        console.log("执行难‘")
+      }
+    }
   };
 
 </script>
