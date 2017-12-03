@@ -26,6 +26,8 @@
           display inline-block
           width 100%
           text-align center
+  .uuuu
+    height 400px
 </style>
 
 <template>
@@ -54,14 +56,21 @@
     </div>
 
     <div @click="goToPage(5)">测试点击滚动</div>
-    <scroll-view>
-      <li v-for="x in 300">
-        <a href="">
-          <img src="https://p3.ssl.qhimg.com/t015584deefe3d02084.jpg" alt="">
-        </a>
-        <em>小怪兽</em>
-      </li>
-    </scroll-view>
+
+    <div style="height:150px;overflow: hidden" class="uuuu">
+      <scroll-view>
+        <div>
+          <li v-for="x in 300">
+            <a href="">
+              <img src="https://p3.ssl.qhimg.com/t015584deefe3d02084.jpg" alt="">
+            </a>
+            <em>小怪兽</em>
+          </li>
+        </div>
+
+        <div v-for="x in 2">fsda{{x}}</div>
+      </scroll-view>
+    </div>
   </div>
 </template>
 
@@ -85,12 +94,12 @@
         this.scroll = new BScroll(this.$refs.wrapper, {
           scrollX: true,
           probeType: 1,
-          click:true
+          click: true
         })
         this.scroll2 = new BScroll(this.$refs.wrapper2, {
           scrollX: true,
           probeType: 1,
-          click:true
+          click: true
         })
         this.scroll.on('scroll', (x, y) => {
           console.log(x)
@@ -105,7 +114,7 @@
     },
     methods: {
       goToPage(x) {
-        this.scroll.scrollTo(-100,0,400)
+        this.scroll.scrollTo(-100, 0, 400)
         console.log("执行难‘")
       }
     }

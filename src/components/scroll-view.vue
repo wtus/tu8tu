@@ -1,8 +1,12 @@
 <style lang="stylus" scoped>
+  .scroll-view-component
+    background-color grey
+    height 100%
+
   .wrapper
     overflow hidden
+    height 100%
     .content
-      display flex
       white-space nowrap
 </style>
 
@@ -31,7 +35,6 @@
         this._initWidth()
         this._initHeight()
         this._initScroll()
-
       })
     },
     computed: {},
@@ -51,7 +54,19 @@
         this.$refs.content.style.width = width + 'px'
       },
       _initHeight() {
-
+        if (!this.scrollY) {
+          return
+        }
+        let children = this.$refs.content.children
+        let height = 0
+        console.log(children[2])
+        for (let i = 0; i < children.length; i++) {
+          height += children[i].clientHeight
+        }
+        this.$refs.content.style.height = height + 'px'
+        if(height<this.$refs.wrapper.clientHeight) {//如果高度不足也让她可以上下拖动
+          this.$refs.content.style.height = (this.$refs.wrapper.clientHeight+1) + 'px'
+        }
       },
       _initScroll() {
         this.scroll = new BScroll(this.$refs.wrapper, {
