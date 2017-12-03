@@ -59,14 +59,14 @@
 
     <div style="height:150px;overflow: hidden" class="uuuu">
       <scroll-view>
-        <div>
+     <!--   <div>
           <li v-for="x in 300">
             <a href="">
               <img src="https://p3.ssl.qhimg.com/t015584deefe3d02084.jpg" alt="">
             </a>
             <em>小怪兽</em>
           </li>
-        </div>
+        </div>-->
 
         <div v-for="x in 2">fsda{{x}}</div>
       </scroll-view>
