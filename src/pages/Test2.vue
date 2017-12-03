@@ -26,8 +26,9 @@ startX: 0,
 <template>
   <div class="test2-component">
     <div class="wrapper" ref="wrapper">
-      <div class="content wheel" ref="content">
-        <div v-for="x in 3000" @click="goto(x)" class="ccc">x{{x}}<br></div>
+      <div class="content" ref="content">
+        <!--<div v-for="x in 30" @click="goto(x)" class="ccc">x{{x}}<br></div>-->
+          <li v-for="x in 3000">fdsa</li>
       </div>
     </div>
     <div class="navbar">
