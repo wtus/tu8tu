@@ -1,4 +1,4 @@
-startX: 0,
+
 <style lang="stylus" type="text/stylus" scoped>
   .test2-component {
     background-color black
