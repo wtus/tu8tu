@@ -7,8 +7,14 @@
       flex 1
       overflow hidden
       background-color green
-      .item
-        line-height 1.5
+      .weixin
+        justify-content space-between
+        align-items center
+        .name
+          flex 1
+          :nth-child(2)
+            color grey
+
     .bottombar
       wh(h:20vh)
       background-color grey
@@ -17,35 +23,18 @@
 <template>
   <div class="test5-component flex-column">
     <div class="content">
-      <div class="item flex">
-        <div class="flex-center">加拿大</div>
-        <div>
-          <span>span1</span>
-          <span>span2</span>
-          <div>div3</div>
+      <div class="weixin flex">
+        <img src="https://p2.ssl.qhimg.com/t018e403adcbd89a68a.jpg" alt="">
+        <div class="name flex-cloumn">
+          <div>算法学习二群</div>
+          <div>旅途：晓得老</div>
         </div>
-      </div>
-
-      <div class="github">
-        <span>java</span>
-        <a href=""> <img height="20" src="https://avatars0.githubusercontent.com/u/914682?s=40&v=4" alt="">
-          1888</a>
-        <a href="">88888</a>
-        <span>build by <a href="">
-          <img  style="float: left" height="20px" src="https://avatars0.githubusercontent.com/u/914682?s=40&v=4" alt="">
-          <img style="float: left" height="20px" src="https://avatars0.githubusercontent.com/u/914682?s=40&v=4" alt="">
-          <img  style="float: left" height="20px" src="https://avatars0.githubusercontent.com/u/914682?s=40&v=4" alt="">
-          <img  style="float: left" height="20px" src="https://avatars0.githubusercontent.com/u/914682?s=40&v=4" alt="">
-          <img   style="float: left" height="20px" src="https://avatars0.githubusercontent.com/u/914682?s=40&v=4" alt="">
-        </a></span>
-        <span class="fright">290 stars this week</span>
-      </div>
-
-      <div>
-        <img  height="20px" src="https://avatars0.githubusercontent.com/u/914682?s=40&v=4" alt="">
-        <img  height="20px" src="https://avatars0.githubusercontent.com/u/914682?s=40&v=4" alt="">
-        <img  height="20px" src="https://avatars0.githubusercontent.com/u/914682?s=40&v=4" alt="">
-
+        <div>
+          <div class="time">
+            <div>昨天</div>
+            <div><i class="fa fa-flag"></i></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="bottombar">s</div>
