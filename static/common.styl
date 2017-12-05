@@ -1,5 +1,14 @@
 @import "default.styl"
 /*************************样式**************************/
+.d-inline-block
+  display inline-block
+
+.fright
+  float right
+
+.flex
+  display flex
+
 /*flex布局居中*/
 .flex-center
   display flex
@@ -17,8 +26,6 @@
   text-overflow ellipsis
 
 /**************************函数/mixin*************************/
-wh(w, h)
-  if w is defined
-    width w
-  if h is defined
-    height h
+wh(w = auto, h = auto)
+  width w
+  height h
