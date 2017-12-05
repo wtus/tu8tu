@@ -36,6 +36,24 @@
           </div>
         </div>
       </div>
+
+      <div class="company flex-column">
+        <div class="flex fai-center">
+          <img src="https://p2.ssl.qhimg.com/t018e403adcbd89a68a.jpg" width="36px" height="36px" alt="">
+          <div class="flex-column flex-1">
+            <span>技术打法</span>
+            <span>设计案例</span>
+          </div>
+        </div>
+        <div class="flex">
+          <div style="width: 36px">星级</div>
+          <div class="flex-column flex-1">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="bottombar">s</div>
   </div>
