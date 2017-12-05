@@ -23,7 +23,7 @@
 <template>
   <div class="test5-component flex-column">
     <div class="content">
-      <div class="weixin flex">
+      <div class="weixin flex ">
         <img src="https://p2.ssl.qhimg.com/t018e403adcbd89a68a.jpg" alt="">
         <div class="name flex-cloumn">
           <div>算法学习二群</div>
