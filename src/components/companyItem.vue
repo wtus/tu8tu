@@ -1,5 +1,5 @@
 <style lang="stylus" type="text/stylus" scoped>
-  @import "../../static/comment.styl"
+  @import "../../static/common.styl"
   .companyItem-component {
     background-color darkgray
     display flex

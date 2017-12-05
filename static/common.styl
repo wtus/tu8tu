@@ -1,9 +1,24 @@
-wuCenter()
-  display flex
-  justify-content center
-  align-items center
-
+@import "default.styl"
+/*************************样式**************************/
+/*flex布局居中*/
 .flex-center
   display flex
   align-items center
   justify-content center
+
+.flex-column
+  display flex
+  flex-direction column
+
+/*显示省略号*/
+.ellipsis
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+/**************************函数/mixin*************************/
+wh(w, h)
+  if w is defined
+    width w
+  if h is defined
+    height h
