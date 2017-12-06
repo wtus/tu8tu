@@ -2,11 +2,9 @@
   @import "../../static/common.styl"
   .test5-component
     height 100vh
-    background-color brown
     .content
       flex 1
       overflow hidden
-      background-color green
       .weixin
         justify-content space-between
         align-items center
@@ -36,17 +34,31 @@
           </div>
         </div>
       </div>
-
-      <div class="company flex-column">
+      <!--公司-->
+      <div class="company flex-column" style="background-color: #e2d9e2">
         <div class="flex fai-center">
-          <img src="https://p2.ssl.qhimg.com/t018e403adcbd89a68a.jpg" width="36px" height="36px" alt="">
+          <img src="https://p2.ssl.qhimg.com/t018e403adcbd89a68a.jpg" width="80px" height="80px" alt="">
           <div class="flex-column flex-1">
-            <span>技术打法</span>
-            <span>设计案例</span>
+            <div class="flex">
+              <span>公司</span>
+              <span class="flex-1"></span>
+              <span>广告</span>
+            </div>
+            <div class="flex">
+              <span>设计案例：150</span>
+              <span>装修日记：50</span>
+              <span class="flex-1"></span>
+              <span>1192.km</span>
+            </div>
           </div>
         </div>
         <div class="flex">
-          <div style="width: 36px">星级</div>
+          <div style="width: 80px">
+            <div class="flex-column fai-center">
+              <span>星星</span>
+              <span>(2009评价)</span>
+            </div>
+          </div>
           <div class="flex-column flex-1">
             <span>1</span>
             <span>2</span>
@@ -54,8 +66,10 @@
           </div>
         </div>
       </div>
+      <!--三张图-->
+      <div class="adpic flex-column"></div>
     </div>
-    <div class="bottombar">s</div>
+    <div class="bottombar flex-center">底部栏</div>
   </div>
 </template>
 
