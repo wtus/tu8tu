@@ -13,9 +13,35 @@
           :nth-child(2)
             color grey
 
+      .loading
+        overflow hidden
+        svg
+          animation r 2s linear infinite
+        .circle
+          animation ss 1.5s ease-in-out infinite
+          /*stroke-dasharray 30 125*2
+          stroke-dashoffset -30*/
     .bottombar
       wh(h:20vh)
       background-color grey
+
+
+  @keyframes ss
+    0%
+      stroke-dasharray 1 125
+      stroke-dashoffset 0;
+    50%
+      stroke-dasharray 100 125
+      stroke-dashoffset -25;
+    100%
+      stroke-dasharray 100 126
+      stroke-dashoffset -125;
+
+  @keyframes r
+    from
+      transform rotate(0deg)
+    to
+      transform rotate(356deg)
 </style>
 
 <template>
@@ -66,8 +92,19 @@
           </div>
         </div>
       </div>
-      <!--三张图-->
-      <div class="adpic flex-column"></div>
+      <!--svg-->
+      <div class="loading" style="width: 300px;height: 300px">
+        <svg class="svg" viewBox="0 0 50 50">
+          <circle cx="25" cy="25" r="20" class="circle"
+                  fill="none"
+                  stroke-width="5%"
+                  stroke="red"
+                  stroke-linecap="round"
+          ></circle>
+        </svg>
+      </div>
+
+
     </div>
     <div class="bottombar flex-center">底部栏</div>
   </div>
