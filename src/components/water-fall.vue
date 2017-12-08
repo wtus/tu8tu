@@ -42,7 +42,7 @@
           console.log(alpha)
         console.log("afhasu风扇灯")
         for (let i = 0; i < imgs.length; i++) {
-          imgs[i].style.width = `${101/this.column}%`
+          imgs[i].style.width = `${100/this.column}%`
         }
       }
     }
