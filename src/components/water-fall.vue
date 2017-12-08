@@ -6,6 +6,10 @@
     position relative
     img
       position absolute
+      transition transform .2s
+      &:hover
+        transform scale(0.9)
+        cursor pointer
 </style>
 
 <template>
@@ -24,6 +28,7 @@
     props: {
       list: {type: Array, required: true},
       column: {type: Number, required: true},
+      space: {type: Number, default:10},
     },
     mounted() {
       setTimeout(() => {
@@ -57,15 +62,14 @@
         for (let i = 0; i < imgs.length; i++) {
           var rowIndex = i % this.column
           this.setElement(imgs[i], columHeights, rowIndex)
-          columHeights[rowIndex] += imgs[i].height
+          columHeights[rowIndex] += imgs[i].height+this.space
         }
       },
       setElement(ele, i, rowIndex) {
         var alpha = ele.height / ele.width
-        var alpha2 = ele.width / (this.$refs.width / this.column)
-        console.log( this.$refs.container.clientWidth )
-        ele.style.width = `${this.$refs.container.clientWidth / this.column}px`
-        ele.style.height = `${alpha * this.$refs.container.clientWidth / this.column}px`
+        var alpha2 = this.$refs.container.clientWidth / this.column-this.space
+        ele.style.width = `${alpha2}px`
+        ele.style.height = `${alpha * alpha2}px`
         ele.style.top = `${i[rowIndex]}` + 'px'
         ele.style.left = `${rowIndex / this.column * 100}%`
       }
