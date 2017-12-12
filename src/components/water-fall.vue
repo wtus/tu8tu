@@ -36,7 +36,6 @@
     display: block;
     height: 100%;
     width 100%
-    opacity: 0.8;
   }
 
   figure figcaption {
@@ -95,7 +94,7 @@
   /***** Bubba *****/
   /*---------------*/
   figure.effect-bubba img {
-    opacity: 0.7;
+    opacity: 0.9;
     -webkit-transition: opacity 0.35s;
     transition: opacity 0.35s;
   }
@@ -173,11 +172,11 @@
         <span>盛大啥</span>
       </div>-->
       <figure class="effect-bubba" v-for="x in list">
-        <img :src="x.url" alt="img06"/>
+        <img :src="x.imgUrl" alt="img06"/>
         <figcaption>
-          <h2>Fresh <span>Bubba</span></h2>
-          <p>Bubba likes to appear out of thin air.</p>
-          <a href="http://www.lanrenzhijia.com/">View more</a>
+          <h2>{{x.title}}</h2>
+          <p>{{x.des}}</p>
+          <a :href="x.url">View more</a>
         </figcaption>
       </figure>
     </div>
