@@ -1,4 +1,5 @@
 <style lang="stylus" type="text/stylus" scoped>
+
   .test6-component {
   }
 </style>
@@ -16,6 +17,10 @@
     props: {},
     mounted() {
       this.list = [
+        {url: 'http://ww1.sinaimg.cn/large/006rV8gJgy1fmdpyrur3oj30nn0ba77m.jpg', height: 800, width: 1280},
+        {url: 'http://ww1.sinaimg.cn/large/006rV8gJgy1fmdq0amwitj30i90catav.jpg', height: 800, width: 1280},
+        {url: 'http://ww1.sinaimg.cn/large/006rV8gJgy1fmdq0ao5jbj30id0hogox.jpg', height: 800, width: 1280},
+        {url: 'http://ww1.sinaimg.cn/large/006rV8gJgy1fmdq0aporbj30q50dkgrw.jpg', height: 800, width: 1280},
         {url: './static/images/1.jpg', height: 800, width: 1280},
         {url: './static/images/2.jpg', height: 1134, width: 808},
         {url: './static/images/3.jpg', height: 800, width: 1280},
