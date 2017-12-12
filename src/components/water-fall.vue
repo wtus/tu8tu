@@ -70,17 +70,17 @@
     opacity: 0;
   }
 
-  figure h2 {
+  figure h4 {
     word-spacing: -0.15em;
 
     font-weight: 300;
   }
 
-  figure h2 span {
+  figure h4 span {
     font-weight: 800;
   }
 
-  figure h2,
+  figure h4,
   figure p {
     margin: 0;
   }
@@ -130,7 +130,7 @@
     transform: scale(1, 0);
   }
 
-  figure.effect-bubba h2 {
+  figure.effect-bubba h4 {
     padding-top: 30%;
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
@@ -174,7 +174,7 @@
       <figure class="effect-bubba" v-for="x in list">
         <img :src="x.imgUrl" alt="img06"/>
         <figcaption>
-          <h2>{{x.title}}</h2>
+          <h4>{{x.title}}</h4>
           <p>{{x.des}}</p>
           <a :href="x.url">View more</a>
         </figcaption>
@@ -191,7 +191,7 @@
     props: {
       list: {type: Array, required: true},
       column: {type: Number, required: true},
-      space: {type: Number, default: 2},
+      space: {type: Number, default: 0},
     },
     mounted() {
       setTimeout(() => {
@@ -200,7 +200,7 @@
       let vue = this
       window.onresize = () => {
         return (() => {
-          //vue.calcPosition()
+          vue.calcPosition()
         })()
       }
     },
