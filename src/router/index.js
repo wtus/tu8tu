@@ -7,6 +7,7 @@ import Test3 from '../pages/Test3.vue'
 import Test4 from '../pages/Test4.vue'
 import Test5 from '../pages/Test5.vue'
 import Test6 from '../pages/Test6.vue'
+import Test7 from '../pages/Test7.vue'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/t6',
       name: Test6.name,
       component: Test6
+    },
+    {
+      path: '/t7',
+      name: Test7.name,
+      component: Test7
     }
   ]
 })
