@@ -15,6 +15,10 @@
     top 0
     right 2%
     height 100vh
+    li
+      height 18px
+    .current
+      color #e2608d
 
 </style>
 
@@ -31,11 +35,14 @@
       </li>
     </scroll-view>
 
-    <div class="letter-view flex-column fjc-center" @touchstart="onLetterViewTouch"
+    <div class="letter-view flex-column fjc-center"
+
     >
-      <ul>
+      <ul @touchstart="onLetterViewTouchStart"
+          @touchmove.stop="onLetterViewTouchMove">
         <li v-for="x in 26"
-            @click="test"
+            :data-index="x-1"
+            :class="{current:(x-1)==currentIndex}"
         >{{String.fromCharCode(64 + x)}}
         </li>
       </ul>
@@ -45,12 +52,16 @@
 </template>
 
 <script>
+  import {getData} from '../assets/dom'
 
   export default {
     name: 'test7',
     props: {},
     mounted() {
       this.listData = this._getRandomData()
+    },
+    created() {
+      this.touch = {}
     },
     activated() {
     },
@@ -59,15 +70,26 @@
     computed: {},
     data() {
       return {
-        listData: []
+        listData: [],
+        currentIndex: 0
       }
     },
     methods: {
-      onLetterViewTouch(e) {
-        console.log(e)
+      onLetterViewTouchStart(e) {
+        let archIndex = getData(e.target, 'index')//得到的是string
+        this.touch.y1 = e.touches[0].pageY
+        this.touch.archIndex = archIndex
+        this.gotoGroup(archIndex)
       },
-      test() {
-        this.$refs.scrollView.scrollToElement(this.$refs.listGroup[3], 400)
+      onLetterViewTouchMove(e) {
+        this.touch.y2 = e.touches[0].pageY
+        let delta = this.touch.y2 - this.touch.y1
+        let scroolCount = delta / 18 | 0
+        this.gotoGroup(parseInt(this.touch.archIndex) + scroolCount)//这里注意 archIndex 是string 必须转一下
+      },
+      gotoGroup(index) {
+        this.$refs.scrollView.scrollToElement(this.$refs.listGroup[index], 400)
+        this.currentIndex = index
       },
       _getRandomData() {
         let list = new Array()
