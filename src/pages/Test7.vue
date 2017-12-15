@@ -19,6 +19,13 @@
       height 18px
     .current
       color #e2608d
+  .floatTitle
+    position fixed
+    top 0
+    left 0
+    right 0
+    background-color #c7c63a
+
 
 </style>
 
@@ -48,6 +55,8 @@
       </ul>
     </div>
 
+    <h2 class="floatTitle" v-show="showFloatTitle">{{floatTitle}}</h2>
+
   </div>
 </template>
 
@@ -71,7 +80,10 @@
     data() {
       return {
         listData: [],
-        currentIndex: 0
+        currentIndex: 0,
+        floatTitle:'A',
+        showFloatTitle:false
+
       }
     },
     methods: {
@@ -93,9 +105,18 @@
       },
       onScroll(pos) {
         //更新 currentIndex
+        console.log(pos.y)
+        if(pos.y>=0) {
+          this.showFloatTitle=false
+        }else {
+          this.showFloatTitle=true
+        }
         for (let i = 0; i < this.$refs.listGroup.length; i++) {
           if (-pos.y < this.$refs.listGroup[i].offsetTop) {
             this.currentIndex = i-1
+            if(i!==0) {
+              this.floatTitle=String.fromCharCode(65+i-1)
+            }
             return
           }
         }
