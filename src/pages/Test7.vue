@@ -5,6 +5,16 @@
 
 <template>
   <div class="test7-component">
+    <ul class="list-group">
+      <li v-for="group in listData">
+        <h2>{{group.title}}</h2>
+        <ul class="listItem">
+          <li v-for="item in group.items">
+            <span>{{item}}</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -14,7 +24,7 @@
     name: 'test7',
     props: {},
     mounted() {
-      this._getRandomData()
+      this.listData = this._getRandomData()
     },
     activated() {
     },
@@ -22,7 +32,9 @@
     },
     computed: {},
     data() {
-      return {}
+      return {
+        listData: []
+      }
     },
     methods: {
       _getRandomData() {
@@ -38,7 +50,7 @@
           }
           list.push(obj)
         }
-        console.log(list)
+        return list
       }
     }
   };
