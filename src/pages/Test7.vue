@@ -62,7 +62,6 @@
     },
     created() {
       this.touch = {}
-      this.mapIndex = {}
     },
     activated() {
     },
@@ -94,10 +93,12 @@
       },
       onScroll(pos) {
         //更新 currentIndex
-//        console.log(pos)
-          this.$refs.listGroup.forEach(function (v, index) {
-            console.log(v.clientHeight)
-          })
+        for (let i = 0; i < this.$refs.listGroup.length; i++) {
+          if (-pos.y < this.$refs.listGroup[i].offsetTop) {
+            this.currentIndex = i-1
+            return
+          }
+        }
       },
       _getRandomData() {
         let list = new Array()
