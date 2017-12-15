@@ -24,7 +24,7 @@
 
 <template>
   <div class="test7-component">
-    <scroll-view ref="scrollView">
+    <scroll-view @scroll="onScroll" :isListenScroll="true" ref="scrollView">
       <li v-for="group in listData" ref="listGroup">
         <h2 class="title" :ref="group.title">{{group.title}}</h2>
         <ul class="listItem">
@@ -62,6 +62,7 @@
     },
     created() {
       this.touch = {}
+      this.mapIndex = {}
     },
     activated() {
     },
@@ -90,6 +91,13 @@
       gotoGroup(index) {
         this.$refs.scrollView.scrollToElement(this.$refs.listGroup[index], 400)
         this.currentIndex = index
+      },
+      onScroll(pos) {
+        //更新 currentIndex
+//        console.log(pos)
+          this.$refs.listGroup.forEach(function (v, index) {
+            console.log(v.clientHeight)
+          })
       },
       _getRandomData() {
         let list = new Array()

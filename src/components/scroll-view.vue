@@ -28,6 +28,8 @@
       scrollX: {type: Boolean, default: false},
       scrollY: {type: Boolean, default: true},
       click: {type: Boolean, default: true},
+      isListenScroll: {type: Boolean, default: false},
+      probeType: {type: Number, default: 1},
     },
     mounted() {
       setTimeout(() => {
@@ -74,11 +76,23 @@
         }
       },
       _initScroll() {
+        if (this.isListenScroll && this.probeType === 1) {
+          this.probeType = 3
+        }
+
         this.scroll = new BScroll(this.$refs.wrapper, {
           scrollX: this.scrollX,
           scrollY: this.scrollY,
           click: this.click,
+          probeType: this.probeType,
         })
+
+        if (this.isListenScroll) {
+          let vue = this
+          this.scroll.on('scroll', (pos) => {
+            vue.$emit('scroll', pos)
+          })
+        }
       }
     }
   };
