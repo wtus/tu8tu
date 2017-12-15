@@ -1,20 +1,44 @@
 <style lang="stylus" type="text/stylus" scoped>
+  @import "../../static/common.styl"
   .test7-component {
+    position: relative
   }
+
+  li
+    list-style none
+
+  .title
+    background-color #0e94e2
+
+  .letter-view
+    position fixed
+    top 0
+    right 2%
+    height 100vh
+
 </style>
 
 <template>
   <div class="test7-component">
-    <ul class="list-group">
+    <scroll-view>
       <li v-for="group in listData">
-        <h2>{{group.title}}</h2>
+        <h2 class="title">{{group.title}}</h2>
         <ul class="listItem">
           <li v-for="item in group.items">
             <span>{{item}}</span>
           </li>
         </ul>
       </li>
-    </ul>
+    </scroll-view>
+
+    <div class="letter-view flex-column fjc-center">
+      <ul>
+        <li v-for="x in 26"
+        @click="test"
+        >{{String.fromCharCode(64 + x)}}</li>
+      </ul>
+    </div>
+
   </div>
 </template>
 
@@ -37,6 +61,9 @@
       }
     },
     methods: {
+      test() {
+        console.log("hhh")
+      },
       _getRandomData() {
         let list = new Array()
         for (let i = 0; i < 26; i++) {

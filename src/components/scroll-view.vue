@@ -1,7 +1,6 @@
-<style lang="stylus" scoped>
+<style lang="stylus" type="text/stylus" >
   .scroll-view-component
-    background-color grey
-    height 100%
+    height 100vh
 
   .wrapper
     overflow hidden
@@ -26,16 +25,16 @@
   export default {
     name: 'scroll-view',
     props: {
-      scrollX: {type: Boolean, default: true},
+      scrollX: {type: Boolean, default: false},
       scrollY: {type: Boolean, default: true},
       click: {type: Boolean, default: true},
     },
     mounted() {
-      this.$nextTick(() => {
+      setTimeout(() => {
         this._initWidth()
         this._initHeight()
         this._initScroll()
-      })
+      }, 20)
     },
     computed: {},
     data() {
@@ -63,9 +62,11 @@
         for (let i = 0; i < children.length; i++) {
           height += children[i].clientHeight
         }
+        console.log(height)
+
         this.$refs.content.style.height = height + 'px'
-        if(height<this.$refs.wrapper.clientHeight) {//如果高度不足也让她可以上下拖动
-          this.$refs.content.style.height = (this.$refs.wrapper.clientHeight+1) + 'px'
+        if (height < this.$refs.wrapper.clientHeight) {//如果高度不足也让她可以上下拖动
+          this.$refs.content.style.height = (this.$refs.wrapper.clientHeight + 1) + 'px'
         }
       },
       _initScroll() {
