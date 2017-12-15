@@ -19,10 +19,10 @@
 </style>
 
 <template>
-  <div class="test7-component">
-    <scroll-view>
-      <li v-for="group in listData">
-        <h2 class="title">{{group.title}}</h2>
+  <div class="test7-component" >
+    <scroll-view ref="scrollView">
+      <li v-for="group in listData" ref="listGroup">
+        <h2 class="title" :ref="group.title">{{group.title}}</h2>
         <ul class="listItem">
           <li v-for="item in group.items">
             <span>{{item}}</span>
@@ -62,7 +62,7 @@
     },
     methods: {
       test() {
-        console.log("hhh")
+        this.$refs.scrollView.scrollToElement(this.$refs.listGroup[3],400)
       },
       _getRandomData() {
         let list = new Array()

@@ -1,4 +1,4 @@
-<style lang="stylus" type="text/stylus" >
+<style lang="stylus" type="text/stylus">
   .scroll-view-component
     height 100vh
 
@@ -41,6 +41,12 @@
       return {}
     },
     methods: {
+      scrollTo() {
+        this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments)
+      },
+      scrollToElement() {
+        this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
+      },
       _initWidth() {
         if (!this.scrollX) {
           return
