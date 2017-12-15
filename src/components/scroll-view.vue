@@ -64,11 +64,9 @@
         }
         let children = this.$refs.content.children
         let height = 0
-        console.log(children[2])
         for (let i = 0; i < children.length; i++) {
           height += children[i].clientHeight
         }
-        console.log(height)
 
         this.$refs.content.style.height = height + 'px'
         if (height < this.$refs.wrapper.clientHeight) {//如果高度不足也让她可以上下拖动

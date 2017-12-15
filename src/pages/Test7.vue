@@ -19,7 +19,7 @@
 </style>
 
 <template>
-  <div class="test7-component" >
+  <div class="test7-component">
     <scroll-view ref="scrollView">
       <li v-for="group in listData" ref="listGroup">
         <h2 class="title" :ref="group.title">{{group.title}}</h2>
@@ -31,11 +31,13 @@
       </li>
     </scroll-view>
 
-    <div class="letter-view flex-column fjc-center">
+    <div class="letter-view flex-column fjc-center" @touchstart="onLetterViewTouch"
+    >
       <ul>
         <li v-for="x in 26"
-        @click="test"
-        >{{String.fromCharCode(64 + x)}}</li>
+            @click="test"
+        >{{String.fromCharCode(64 + x)}}
+        </li>
       </ul>
     </div>
 
@@ -61,8 +63,11 @@
       }
     },
     methods: {
+      onLetterViewTouch(e) {
+        console.log(e)
+      },
       test() {
-        this.$refs.scrollView.scrollToElement(this.$refs.listGroup[3],400)
+        this.$refs.scrollView.scrollToElement(this.$refs.listGroup[3], 400)
       },
       _getRandomData() {
         let list = new Array()
