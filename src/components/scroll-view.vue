@@ -29,6 +29,7 @@
       scrollY: {type: Boolean, default: true},
       click: {type: Boolean, default: true},
       isListenScroll: {type: Boolean, default: false},
+      isListenScrollEnd: {type: Boolean, default: false},
       probeType: {type: Number, default: 1},
     },
     mounted() {
@@ -91,6 +92,14 @@
           let vue = this
           this.scroll.on('scroll', (pos) => {
             vue.$emit('scroll', pos)
+          })
+        }
+
+        if(this.isListenScrollEnd) {
+          let vue=this
+          this.scroll.on('scrollEnd',()=>{
+            console.log('sa')
+            vue.$emit('scrollEnd')
           })
         }
       }

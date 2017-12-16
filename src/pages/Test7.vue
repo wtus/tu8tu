@@ -19,6 +19,7 @@
       height 18px
     .current
       color #e2608d
+
   .floatTitle
     position fixed
     top 0
@@ -50,7 +51,7 @@
         <li v-for="x in 26"
             :data-index="x-1"
             :class="{current:(x-1)==currentIndex}"
-        >{{String.fromCharCode(64 + x)}}
+        > {{String.fromCharCode(65 + x - 1)}}
         </li>
       </ul>
     </div>
@@ -81,9 +82,9 @@
       return {
         listData: [],
         currentIndex: 0,
-        floatTitle:'A',
-        showFloatTitle:false
-
+        floatTitle: 'A',
+        showFloatTitle: false,
+        scrollY: 0
       }
     },
     methods: {
@@ -102,24 +103,28 @@
       gotoGroup(index) {
         this.$refs.scrollView.scrollToElement(this.$refs.listGroup[index], 400)
         this.currentIndex = index
+        this.floatTitle = String.fromCharCode(65+index)
+
       },
       onScroll(pos) {
+        this.scrollY = pos.y
         //更新 currentIndex
-        console.log(pos.y)
-        if(pos.y>=0) {
-          this.showFloatTitle=false
-        }else {
-          this.showFloatTitle=true
-        }
-        for (let i = 0; i < this.$refs.listGroup.length; i++) {
-          if (-pos.y < this.$refs.listGroup[i].offsetTop) {
-            this.currentIndex = i-1
-            if(i!==0) {
-              this.floatTitle=String.fromCharCode(65+i-1)
-            }
-            return
-          }
-        }
+//        console.log(pos.y)
+//        if(pos.y>=0) {
+//          this.showFloatTitle=false
+//        }else {
+//          this.showFloatTitle=true
+//        }
+//        for (let i = 0; i < this.$refs.listGroup.length; i++) {
+//          if (-pos.y < this.$refs.listGroup[i].offsetTop&&-pos.y > this.$refs.listGroup[i-1].offsetTop) {
+//            this.currentIndex = i-1
+//            if(i!==0) {
+//              console.log(i-1)
+//              this.floatTitle=String.fromCharCode(65+i-1)
+//            }
+//            return
+//          }
+//        }
       },
       _getRandomData() {
         let list = new Array()
@@ -135,6 +140,26 @@
           list.push(obj)
         }
         return list
+      }
+    },
+    watch: {
+      scrollY(newY) {
+        console.log(newY)
+        if (newY >= 0) {
+          this.showFloatTitle = false
+        } else {
+          this.showFloatTitle = true
+        }
+        for (let i = 0; i < this.$refs.listGroup.length; i++) {
+          if (-newY < this.$refs.listGroup[i].offsetTop && -newY > this.$refs.listGroup[i - 1].offsetTop) {
+            this.currentIndex = i - 1
+            if (i !== 0) {
+              console.log(i - 1)
+              this.floatTitle = String.fromCharCode(65 + i - 1)
+            }
+            return
+          }
+        }
       }
     }
   };
