@@ -10,6 +10,9 @@
   .title
     background-color #0e94e2
 
+  h2
+    height 30px
+
   .letter-view
     position fixed
     top 0
@@ -56,7 +59,7 @@
       </ul>
     </div>
 
-    <h2 class="floatTitle" v-show="showFloatTitle">{{floatTitle}}</h2>
+    <h2 class="floatTitle" v-show="showFloatTitle" ref="floatTitle">{{floatTitle}}</h2>
 
   </div>
 </template>
@@ -72,6 +75,7 @@
     },
     created() {
       this.touch = {}
+      this.listHeight = []
     },
     activated() {
     },
@@ -103,28 +107,23 @@
       gotoGroup(index) {
         this.$refs.scrollView.scrollToElement(this.$refs.listGroup[index], 400)
         this.currentIndex = index
-        this.floatTitle = String.fromCharCode(65+index)
+        this.floatTitle = String.fromCharCode(65 + index)
 
       },
       onScroll(pos) {
         this.scrollY = pos.y
-        //更新 currentIndex
-//        console.log(pos.y)
-//        if(pos.y>=0) {
-//          this.showFloatTitle=false
-//        }else {
-//          this.showFloatTitle=true
-//        }
-//        for (let i = 0; i < this.$refs.listGroup.length; i++) {
-//          if (-pos.y < this.$refs.listGroup[i].offsetTop&&-pos.y > this.$refs.listGroup[i-1].offsetTop) {
-//            this.currentIndex = i-1
-//            if(i!==0) {
-//              console.log(i-1)
-//              this.floatTitle=String.fromCharCode(65+i-1)
-//            }
-//            return
-//          }
-//        }
+      },
+      _calculateHeight() {
+        this.listHeight = []
+        const list = this.$refs.listGroup
+        let height = 0
+        this.listHeight.push(height)
+        for (let i = 0; i < list.length; i++) {
+          let item = list[i]
+          height += item.clientHeight
+          this.listHeight.push(height)
+        }
+        console.log(this.listHeight)
       },
       _getRandomData() {
         let list = new Array()
@@ -143,21 +142,47 @@
       }
     },
     watch: {
+      listData() {
+        setTimeout(() => {
+          this._calculateHeight()
+        }, 20)
+      },
       scrollY(newY) {
-        console.log(newY)
+//        console.log(newY)
         if (newY >= 0) {
           this.showFloatTitle = false
         } else {
           this.showFloatTitle = true
         }
-        for (let i = 0; i < this.$refs.listGroup.length; i++) {
-          if (-newY < this.$refs.listGroup[i].offsetTop && -newY > this.$refs.listGroup[i - 1].offsetTop) {
-            this.currentIndex = i - 1
-            if (i !== 0) {
-              console.log(i - 1)
-              this.floatTitle = String.fromCharCode(65 + i - 1)
-            }
-            return
+        /*    for (let i = 0; i < this.$refs.listGroup.length; i++) {
+              if (-newY < this.$refs.listGroup[i].offsetTop && -newY > this.$refs.listGroup[i - 1].offsetTop) {
+                this.currentIndex = i - 1
+                if (i !== 0) {
+                  console.log(i - 1)
+                  this.floatTitle = String.fromCharCode(65 + i - 1)
+                }
+                //
+                if (this.$refs.listGroup[i + 1].offsetTop - this.$refs.listGroup[i].offsetTop > 0) {
+
+                }
+                return
+              }
+            }*/
+        for (let i = 0; i < this.listHeight.length; i++) {
+          if (-newY < this.listHeight[i + 1] && -newY > this.listHeight[i]) {
+            this.currentIndex = i
+            this.floatTitle = String.fromCharCode(65 + i)
+            console.log(newY, this.listHeight[i], this.listHeight[i + 1])
+            let offset = this.listHeight[i + 1] + newY
+            let s = offset < 30 ? offset-30 : 0
+            this.$refs.floatTitle.style.transform = `translate3d(0,${
+              s
+              }px,0)`
+
+//            if ((this.listHeight[i + 1] + newY) <= 30) {
+//              console.log(this.listHeight[i + 1] + newY)
+//              this.$refs.floatTitle.style.transform = `translate3d(0,${this.listHeight[i + 1] + newY - 30}px,0)`
+//            }
           }
         }
       }
