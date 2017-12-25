@@ -8,6 +8,7 @@ import Test4 from '../pages/Test4.vue'
 import Test5 from '../pages/Test5.vue'
 import Test6 from '../pages/Test6.vue'
 import Test7 from '../pages/Test7.vue'
+import Home from '../pages/TabHome.vue'
 
 Vue.use(Router)
 
@@ -20,8 +21,8 @@ export default new Router({
     },
     {
       path: '/t',
-      name: Test.name,
-      component: Test
+      name: Home.name,
+      component: Home
     }    ,
     {
       path: '/t2',

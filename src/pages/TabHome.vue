@@ -17,10 +17,7 @@
 
 <template>
   <div class="TabHome-component">
-    <!--<carousel :listImg="carouselList"></carousel>-->
-    <a href="">
-      已关注
-    </a>
+
   </div>
 </template>
 
