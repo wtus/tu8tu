@@ -1,16 +1,18 @@
-<style lang="stylus" type="text/stylus" scoped>
+<style lang="stylus" type="text/stylus">
   .TabHome-component {
   }
-  .test
-    background-color darkcyan
-    height 620px
-
 
 </style>
 
 <template>
   <div class="TabHome-component">
-    <div class="test"></div>
+    <slide>
+      <div v-for="item in carouselList">
+        <a href="item.linkurl">
+          <img :src="item.imgurl">
+        </a>
+      </div>
+    </slide>
   </div>
 </template>
 
@@ -21,7 +23,7 @@
 
   export default {
     components: {
-      'slide':Slide
+      'slide': Slide
     },
     name: 'TabHome',
     props: {},
