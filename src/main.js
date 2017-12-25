@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import api from './api/api'
 import store from './store'
+import 'lib-flexible/flexible.js'
 
 import carousel from './components/carousel.vue'
 import carousel2 from './components/carousel2.vue'

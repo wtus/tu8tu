@@ -2,20 +2,12 @@
   .slide-component {
     min-height 1px
     background-color mediumvioletred
-    height 300px
   }
 
   .slide-group
     display flex
-    .slider-item
-      a
-        display block
-        width: 100%
-        overflow hidden
-        text-decoration none
-      img
-        display block
-        width 30%
+
+
 
   .dots
     transform translateZ(1px)
