@@ -6,14 +6,16 @@
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  export default {
+    name: 'app'
+  }
 </script>
 
-<style>
+<style lang="stylus" type="text/stylus">
   * {
     padding: 0;
     margin: 0;
   }
+
+  @import "../static/common.styl"
 </style>

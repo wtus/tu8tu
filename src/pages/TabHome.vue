@@ -2,13 +2,20 @@
   .TabHome-component {
   }
 
+  slide
+    height 620px
+
+  img
+    height 100%
+    width 100%
+
 </style>
 
 <template>
   <div class="TabHome-component">
     <slide>
       <div v-for="item in carouselList">
-        <a href="item.linkurl">
+        <a :href="item.linkurl">
           <img :src="item.imgurl">
         </a>
       </div>

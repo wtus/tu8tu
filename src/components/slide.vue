@@ -1,39 +1,30 @@
 <style lang="stylus" type="text/stylus">
   .slide-component {
     min-height 1px
-    background-color mediumvioletred
-    height 300px
+    height 100%
+    width 100%
+    position relative
   }
 
   .slide-group
     display flex
-    .slider-item
-      a
-        display block
-        width: 100%
-        overflow hidden
-        text-decoration none
-      img
-        display block
-        width 30%
 
   .dots
-    transform translateZ(1px)
-    display flex
-    text-align: center
-    font-size: 0
     position absolute
-    right 0
-    .dot
-      background-color blueviolet
-      width 24px
-      margin 0 4px
-      height @width
-      cursor pointer
-      border-radius 50%
-    .active
-      background-color #ff5c8e
-
+    bottom 23px
+    right 50px
+    span
+      border-radius 7.5px
+      width 15px
+      opacity 0.5
+      height 15px
+      display block
+      margin 0 5px
+      background-color #a2a3a1
+      &.actived
+        width 25px
+        background-color #fefffd
+        opacity 0.8
 
 </style>
 
@@ -42,10 +33,8 @@
     <div class="slide-group" ref="slideGroup">
       <slot></slot>
     </div>
-    <div class="dots" v-if="showDot">
-      <span class="dot" v-for="(item,index) in dots"
-            :class="{active:index==currentPageIndex}"
-            @click="clickItem(index)"></span>
+    <div class="dots flex">
+      <span v-for="(x,index) in dots" :class="{actived:index===currentPageIndex}"></span>
     </div>
   </div>
 </template>
@@ -100,7 +89,6 @@
       })
     },
     activated() {
-      console.log('activated')
       if (this.slide) {
         return
       }
@@ -154,11 +142,11 @@
             threshold: 0.3,
             speed: 600
           },
+          click: true
         })
 
         this.slide.on('scrollEnd', this._onScrollEnd)
         this.slide.on('touchEnd', () => {
-          console.log('touchendtouchend')
           if (this.autoplay) {
             this._play()
           }
@@ -172,7 +160,6 @@
         }, this.interval)
       },
       _onScrollEnd() {
-        console.log('_onScrollEnd')
         let pageIndex = this.slide.getCurrentPage().pageX
         this.currentPageIndex = pageIndex
         if (this.autoplay) {
@@ -184,7 +171,6 @@
         this.slide.refresh()
       },
       clickItem(index) {
-        console.log("Df")
         this.slide.goToPage(index, 0, 600)
       }
     }
