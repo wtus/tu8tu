@@ -26,7 +26,7 @@
     name: 'scroll-view',
     props: {
       scrollX: {type: Boolean, default: false},
-      scrollY: {type: Boolean, default: true},
+      scrollY: {type: Boolean, default: false},
       click: {type: Boolean, default: true},
       isListenScroll: {type: Boolean, default: false},
       isListenScrollEnd: {type: Boolean, default: false},

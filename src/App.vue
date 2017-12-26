@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <router-view/>
-
   </div>
 </template>
 
@@ -15,7 +14,7 @@
   * {
     padding: 0;
     margin: 0;
+    font-family "Microsoft YaHei"
   }
-
   @import "../static/common.styl"
 </style>

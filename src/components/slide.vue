@@ -8,6 +8,7 @@
 
   .slide-group
     display flex
+    overflow hidden
 
   .dots
     position absolute
