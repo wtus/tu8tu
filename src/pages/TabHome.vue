@@ -41,6 +41,7 @@
       color black
     span.more
       color #999
+
   .scroll-item
     background-color white
     padding-left 40px
@@ -85,6 +86,10 @@
     </slide>
     <!--选项-->
     <div class="selectionBar flex fjc-around fai-center">
+      <div class="flex-center-column">
+        <img src="../assets/index_list_head_tag_gsc.png" style="width: 90px;height: 90px;" alt="">
+        <span>学装修</span>
+      </div>
       <div>s</div>
       <div>s</div>
       <div>s</div>
