@@ -7,6 +7,7 @@
     height 100%
     .content
       white-space nowrap
+      display flex
 </style>
 
 <template>

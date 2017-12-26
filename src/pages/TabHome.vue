@@ -45,18 +45,17 @@
   .scroll-item
     background-color white
     padding-left 40px
+    .div1
+      width 721px
+      height 432px
     .text0
       font-size: 17px; /*no*/
       color #555
-
     .text1
-      font-size: 15px; /*no*/
+      margin-top 2px
+      font-size: 15px; /*no*//*不要在最后一行否则会被格式化*/
       color #999
 
-  .div1
-    background-color red
-    width 721px
-    height 432px
 
 </style>
 
@@ -78,11 +77,12 @@
       <div>s</div>
     </div>
     <!--三个广告-->
+    <!--todo 这里从列表里面读数据会报错 cardList-->
     <div class="cardList flex fjc-center">
-      <img :src="cardList.data[0].image" alt="" class="card1">
+      <img :src="cardList[0].image" alt="" class="card1">
       <div class="flex-column fjc-between col2">
-        <img :src="cardList.data[1].image" alt="" class="card2">
-        <img :src="cardList.data[2].image" alt="" class="card3">
+        <img :src="cardList[1].image" alt="" class="card2">
+        <img :src="cardList[2].image" alt="" class="card3">
       </div>
     </div>
     <!--装修案例-->
@@ -91,13 +91,15 @@
       <span class="more">更多</span>
     </div>
     <scroll-view :scrollX="true">
-      <div class="scroll-item flex-column">
-        <div class="div1">
-          <img class="br-2" src="http://file.to8to.com/d/flash/20160903130920779661472880076989_f.jpg?t=1472880080"
-               alt="">
+      <div class="flex">
+        <div v-for="(item ,index) in caseList" class="scroll-item flex-column">
+          <div class="div1">
+            <img class="br-2" :src="item.cover"
+                 alt="">
+          </div>
+          <div class="text0">{{getDecorationCaseText0(item)}}</div>
+          <div class="text1">{{getDecorationCaseText1(item)}}</div>
         </div>
-        <div class="text0">天津</div>
-        <div class="text1">设计师</div>
       </div>
     </scroll-view>
   </div>
@@ -125,9 +127,9 @@
       })
 
       this.$api.getIndexData().then(function (data) {
-        vue.cardList = (data.data.cardList[0])
-        vue.caseList = (data.data.cardList[1])
-        console.log(vue.caseList.data[0].cover)
+        vue.cardList = (data.data.cardList[0].data)
+        vue.caseList = (data.data.cardList[1].data)
+        console.log(vue.caseList[0].cover)
       }).catch(function (err) {
         console.log(err)
       })
@@ -141,10 +143,11 @@
       }
     },
     methods: {
-      getDecorationCaseText0() {
+      getDecorationCaseText0(item) {
+        return `${item.area}㎡/${item.style_name}/${item.house_type_name}/${item.zxtype_name}`
       },
-      getDecorationCaseText1() {
-
+      getDecorationCaseText1(item) {
+        return `${item.province} ${item.address}`
       }
     }
   };
