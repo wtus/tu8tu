@@ -13,14 +13,20 @@
   .selectionBar
     height 200px
     background-color white
+
   .cardList
-    height 420px
-    .col1
-      width 489px
+    .card1
+      height 420px
+      width 490px
     .col2
-      width 476px
-      img
+      margin-left 30px
+      .card2
+        width 476px
         height 193px
+      .card3
+        width 476px
+        height 193px
+
 
 </style>
 
@@ -42,13 +48,11 @@
       <div>s</div>
     </div>
     <!--dddd-->
-    <div class="cardList flex">
-      <div class="col1">
-        <img src="http://pic.to8to.com/attch/day_171010/1720383.gif" alt="">
-      </div>
-      <div class="flex-column clo2">
-        <img src="http://pic.to8to.com/attch/day_171010/1389155.gif" alt="">
-        <img src="http://pic.to8to.com/attch/day_170908/1114570.png" alt="">
+    <div class="cardList flex fjc-center">
+      <img src="http://pic.to8to.com/attch/day_171010/1720383.gif" alt="" class="card1">
+      <div class="flex-column fjc-between col2">
+        <img src="http://pic.to8to.com/attch/day_171010/1389155.gif" alt="" class="card2">
+        <img src="http://pic.to8to.com/attch/day_170908/1114570.png" alt="" class="card3">
       </div>
     </div>
   </div>

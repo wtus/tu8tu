@@ -31,7 +31,7 @@ exports.cssLoaders = function (options) {
   const px2remLoader = {
     loader: 'px2rem-loader',
     options: {
-      remUnit: 75/*假设原始设计稿宽度为750px 设计稿宽度/10*/
+      remUnit: 108/*假设原始设计稿宽度为750px 设计稿宽度/10*/
     }
   }
 
