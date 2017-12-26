@@ -37,10 +37,27 @@
     margin-top 35px
     background-color white
     span.title
+      font-size: 22px; /*no*/
       color black
-      font-size 45px
     span.more
       color #999
+
+  .scroll-item
+    background-color white
+    padding-left 40px
+    .text0
+      font-size: 17px; /*no*/
+      color #555
+
+    .text1
+      font-size: 15px; /*no*/
+      color #999
+
+  .div1
+    background-color red
+    width 721px
+    height 432px
+
 </style>
 
 <template>
@@ -74,7 +91,14 @@
       <span class="more">更多</span>
     </div>
     <scroll-view :scrollX="true">
-
+      <div class="scroll-item flex-column">
+        <div class="div1">
+          <img class="br-2" src="http://file.to8to.com/d/flash/20160903130920779661472880076989_f.jpg?t=1472880080"
+               alt="">
+        </div>
+        <div class="text0">天津</div>
+        <div class="text1">设计师</div>
+      </div>
     </scroll-view>
   </div>
 </template>
@@ -102,7 +126,8 @@
 
       this.$api.getIndexData().then(function (data) {
         vue.cardList = (data.data.cardList[0])
-        console.log(vue.cardList.data[0].image)
+        vue.caseList = (data.data.cardList[1])
+        console.log(vue.caseList.data[0].cover)
       }).catch(function (err) {
         console.log(err)
       })
@@ -111,10 +136,17 @@
     data() {
       return {
         carouselList: [],
-        cardList: []
+        cardList: [],
+        caseList: [],
       }
     },
-    methods: {}
+    methods: {
+      getDecorationCaseText0() {
+      },
+      getDecorationCaseText1() {
+
+      }
+    }
   };
 
 </script>
