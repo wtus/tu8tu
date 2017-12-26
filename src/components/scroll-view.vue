@@ -1,7 +1,6 @@
 <style lang="stylus" type="text/stylus">
   .scroll-view-component
-    height 100vh
-
+    background-color white
   .wrapper
     overflow hidden
     height 100%

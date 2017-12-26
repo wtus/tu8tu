@@ -41,7 +41,6 @@
       color black
     span.more
       color #999
-
   .scroll-item
     background-color white
     padding-left 40px
@@ -51,10 +50,25 @@
     .text0
       font-size: 17px; /*no*/
       color #555
+      margin-top 35px
     .text1
       margin-top 2px
       font-size: 15px; /*no*//*不要在最后一行否则会被格式化*/
       color #999
+      margin-bottom 35px
+
+  .login
+    font-size 20px /*no*/
+    height 135px
+    width 1010px
+    background-color white
+    margin-top 50px
+    margin-bottom 10px
+    box-shadow 0 2px 0 3px #999
+
+  .loginText
+    color #999
+    margin-bottom 40px
 
 
 </style>
@@ -97,11 +111,16 @@
             <img class="br-2" :src="item.cover"
                  alt="">
           </div>
-          <div class="text0">{{getDecorationCaseText0(item)}}</div>
-          <div class="text1">{{getDecorationCaseText1(item)}}</div>
+          <div class="text0">{{_getDecorationCaseText0(item)}}</div>
+          <div class="text1">{{_getDecorationCaseText1(item)}}</div>
         </div>
       </div>
     </scroll-view>
+    <!--登陆-->
+    <div class="flex-column fjc-center fai-center">
+      <span class="login flex-center br-2">登录</span>
+      <span class="loginText">登录后，推荐可以更准确哦~</span>
+    </div>
   </div>
 </template>
 
@@ -143,10 +162,10 @@
       }
     },
     methods: {
-      getDecorationCaseText0(item) {
+      _getDecorationCaseText0(item) {
         return `${item.area}㎡/${item.style_name}/${item.house_type_name}/${item.zxtype_name}`
       },
-      getDecorationCaseText1(item) {
+      _getDecorationCaseText1(item) {
         return `${item.province} ${item.address}`
       }
     }
