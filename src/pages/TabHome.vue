@@ -16,7 +16,7 @@
     padding-top 20px
 
   .cardList
-    padding-bottom  40px
+    padding-bottom 40px
     background-color white
     .card1
       height 420px
@@ -30,37 +30,7 @@
         width 476px
         height 193px
 
-  .decorationCase
-    display flex
-    justify-content space-between
-    align-items center
-    padding 56px 40px
-    margin-top 35px
-    background-color white
-    span.title
-      font-size: 22px; /*no*/
-      color black
-    span.more
-      color #999
-      i
-        display block
-        background-image url("")
 
-  .scroll-item
-    background-color white
-    padding-left 40px
-    .div1
-      width 721px
-      height 432px
-    .text0
-      font-size: 17px; /*no*/
-      color #555
-      margin-top 35px
-    .text1
-      margin-top 2px
-      font-size: 15px; /*no*//*不要在最后一行否则会被格式化*/
-      color #999
-      margin-bottom 35px
 
   .login
     font-size 20px /*no*/
@@ -106,22 +76,8 @@
       </div>
     </div>
     <!--装修案例-->
-    <div class="decorationCase">
-      <span class="title">装修案例</span>
-      <span class="more">更多</span>
-    </div>
-    <scroll-view :scrollX="true">
-      <div class="flex">
-        <div v-for="(item ,index) in caseList" class="scroll-item flex-column">
-          <div class="div1">
-            <img class="br-2" :src="item.cover"
-                 alt="">
-          </div>
-          <div class="text0">{{_getDecorationCaseText0(item)}}</div>
-          <div class="text1">{{_getDecorationCaseText1(item)}}</div>
-        </div>
-      </div>
-    </scroll-view>
+    <indexTitle mTitle="装修案例"></indexTitle>
+    <indexGallery :mData="designList"></indexGallery>
     <!--登陆-->
     <div class="flex-column fjc-center fai-center">
       <span class="login flex-center br-2">登录</span>
@@ -135,11 +91,15 @@
 
   import Slide from '../components/slide.vue'
   import ScrollView from "../components/scroll-view.vue";
+  import indexTitle from "../components/indexTitle.vue";
+  import indexGallery from "../components/indexGallery.vue";
 
   export default {
     components: {
       ScrollView,
-      'slide': Slide
+      'slide': Slide,
+      indexTitle,
+      indexGallery
     },
     name: 'TabHome',
     props: {},
@@ -154,7 +114,11 @@
       this.$api.getIndexData().then(function (data) {
         vue.cardList = (data.data.cardList[0].data)
         vue.caseList = (data.data.cardList[1].data)
-        console.log(vue.caseList[0].cover)
+        vue.designList = (data.data.cardList[2].data).map(function (it) {
+          return {'image': it.image, "text0": `${it.address}•${it.district}`,
+            "text1": `设计师:${it.designer}`}
+        })
+        console.log(vue.designList)
       }).catch(function (err) {
         console.log(err)
       })
@@ -165,6 +129,7 @@
         carouselList: [],
         cardList: [],
         caseList: [],
+        designList: [],
       }
     },
     methods: {
