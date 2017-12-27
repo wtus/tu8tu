@@ -1,13 +1,11 @@
 <style lang="stylus" type="text/stylus">
   .TabHome-component {
     background-color #eee
-    width 10rem
     overflow hidden
   }
 
   slide
     height 620px
-    width 10rem
 
   img
     height 100%
@@ -48,6 +46,7 @@
 
   .docProcess
     background-color white
+    width 10rem
     .title
       span:not(:last-of-type)
         padding-right 10px
@@ -103,8 +102,24 @@
         <span>装修中</span>
         <span>装修后</span>
       </div>
-      <span>sss</span>
-      <div class="dots flex">
+      <scroll-view :scrollX="true">
+        <div class="flex docProcess">
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        </div>
+      </scroll-view>
+      <div class="dots flex fjc-around">
         <span></span>
         <span></span>
         <span></span>
