@@ -77,6 +77,8 @@
     </div>
     <!--装修案例-->
     <indexTitle mTitle="装修案例"></indexTitle>
+    <indexGallery :mData="caseList"></indexGallery>
+    <indexTitle mTitle="土巴兔原创设计"></indexTitle>
     <indexGallery :mData="designList"></indexGallery>
     <!--登陆-->
     <div class="flex-column fjc-center fai-center">
@@ -113,11 +115,22 @@
 
       this.$api.getIndexData().then(function (data) {
         vue.cardList = (data.data.cardList[0].data)
-        vue.caseList = (data.data.cardList[1].data)
+        vue.caseList = (data.data.cardList[1].data).map((it)=>{
+            return {'image':it.cover,"text0": `${it.area}㎡/${it.style_name}/${it.house_type_name}/${it.zxtype_name}`,
+              "text1": `${it.province} ${it.address}`
+            }
+        })
         vue.designList = (data.data.cardList[2].data).map(function (it) {
           return {'image': it.image, "text0": `${it.address}•${it.district}`,
             "text1": `设计师:${it.designer}`}
         })
+        vue.diaryList = (data.data.cardList[4].data).map(function (it) {
+          return {'image': it.cover_image, "text0": `${it.area}㎡/${it.style[0].value} ${it.style[1].value}`,
+            "text1": `${it.owner_name}`,
+          "text2":`${it.diary_content}`
+          }
+        })
+
         console.log(vue.designList)
       }).catch(function (err) {
         console.log(err)
@@ -130,15 +143,11 @@
         cardList: [],
         caseList: [],
         designList: [],
+        diaryList: [],
       }
     },
     methods: {
-      _getDecorationCaseText0(item) {
-        return `${item.area}㎡/${item.style_name}/${item.house_type_name}/${item.zxtype_name}`
-      },
-      _getDecorationCaseText1(item) {
-        return `${item.province} ${item.address}`
-      }
+
     }
   };
 
