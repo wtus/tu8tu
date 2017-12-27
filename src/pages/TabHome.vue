@@ -61,7 +61,6 @@
         background-color #999
         border-radius 50%
 
-
 </style>
 
 <template>
@@ -102,8 +101,26 @@
         <span>装修中</span>
         <span>装修后</span>
       </div>
-      <scroll-view :scrollX="true">
-        <div class="flex docProcess">
+      <scroll-view :scrollX="true" class="sss">
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
           <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
           <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
           <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
@@ -116,8 +133,6 @@
           <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
           <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
           <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        </div>
       </scroll-view>
       <div class="dots flex fjc-around">
         <span></span>
