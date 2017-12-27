@@ -54,11 +54,15 @@
       },
       autoPlay: {
         type: Boolean,
-        default: false
+        default: true
       },
       interval: {
         type: Number,
         default: 4000
+      },
+      loop: {
+        type: Boolean,
+        default: false
       },
     },
     mounted() {
@@ -131,6 +135,9 @@
           child.style.width = slideWidth + 'px'
           width += slideWidth
         }
+        if (this.loop && !isResize) {
+          width += 2 * slideWidth
+        }
         this.$refs.slideGroup.style.width = width + 'px'
       },
       _initDots() {
@@ -140,7 +147,9 @@
         this.slide = new BScroll(this.$refs.slide, {
           scrollX: true,
           momentum: false,
+
           snap: {
+            loop:this.loop,
             threshold: 0.3,
             speed: 600
           },
@@ -164,7 +173,9 @@
       _onScrollEnd() {
         let pageIndex = this.slide.getCurrentPage().pageX
         this.currentPageIndex = pageIndex
-        if (this.autoplay) {
+        console.log(this.autoPlay)
+        if (this.autoPlay) {
+          console.log("执行")
           this._play()
         }
       },

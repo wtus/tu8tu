@@ -56,7 +56,7 @@
 <template>
   <div class="TabHome-component">
     <!--轮播图-->
-    <slide>
+    <slide :autoPlay="true" :loop="true">
       <div v-for="item in carouselList">
         <a :href="item.linkurl">
           <img :src="item.imgurl">
