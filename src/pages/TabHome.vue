@@ -13,9 +13,10 @@
   .selectionBar
     height 200px
     background-color white
+    padding-top 20px
 
   .cardList
-    padding 40px 0
+    padding-bottom  40px
     background-color white
     .card1
       height 420px
@@ -41,6 +42,9 @@
       color black
     span.more
       color #999
+      i
+        display block
+        background-image url("")
 
   .scroll-item
     background-color white
@@ -86,14 +90,11 @@
     </slide>
     <!--选项-->
     <div class="selectionBar flex fjc-around fai-center">
-      <div class="flex-center-column">
-        <img src="../assets/index_list_head_tag_gsc.png" style="width: 90px;height: 90px;" alt="">
-        <span>学装修</span>
-      </div>
-      <div>s</div>
-      <div>s</div>
-      <div>s</div>
-      <div>s</div>
+      <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+      <picTitle imgText="找设计" imgUrl="static/index_list_head_tag_zsj.png"></picTitle>
+      <picTitle imgText="看日记" imgUrl="static/index_list_head_tag_krj.png"></picTitle>
+      <picTitle imgText="提问题" imgUrl="static/index_list_head_tag_twt.png"></picTitle>
+      <picTitle imgText="逛商城" imgUrl="static/index_list_head_tag_gsc.png"></picTitle>
     </div>
     <!--三个广告-->
     <!--todo 这里从列表里面读数据会报错 cardList-->

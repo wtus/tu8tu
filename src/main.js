@@ -17,6 +17,7 @@ import tabbar from './components/tabbar.vue'
 import companyItem from './components/companyItem.vue'
 import scrollView from './components/scroll-view.vue'
 import waterFall from './components/water-fall.vue'
+import picTitle from './components/picTitle.vue'
 
 import TabHome from './pages/TabHome.vue'
 import TabPic from './pages/TabPic.vue'
@@ -49,6 +50,7 @@ Vue.component(TabNewHouse.name, TabNewHouse);
 Vue.component(companyItem.name, companyItem);
 Vue.component(scrollView.name, scrollView);
 Vue.component(waterFall.name, waterFall);
+Vue.component(picTitle.name, picTitle);
 
 /* eslint-disable no-new */
 new Vue({
