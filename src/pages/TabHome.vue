@@ -30,8 +30,6 @@
         width 476px
         height 193px
 
-
-
   .login
     font-size 20px /*no*/
     height 135px
@@ -44,6 +42,13 @@
   .loginText
     color #999
     margin-bottom 40px
+
+  .docProcess
+    .title
+      span:not(:last-of-type)
+        padding-right 10px
+        display inline-block
+        border-right 1px solid #999
 
 
 </style>
@@ -80,6 +85,15 @@
     <indexGallery :mData="caseList"></indexGallery>
     <indexTitle mTitle="土巴兔原创设计"></indexTitle>
     <indexGallery :mData="designList"></indexGallery>
+    <div class="docProcess flex-center-column">
+      <div class="title">
+        <span>装修前</span>
+        <span>装修中</span>
+        <span>装修后</span>
+      </div>
+      <span>www</span>
+      <span>sss</span>
+    </div>
     <!--登陆-->
     <div class="flex-column fjc-center fai-center">
       <span class="login flex-center br-2">登录</span>
@@ -115,19 +129,23 @@
 
       this.$api.getIndexData().then(function (data) {
         vue.cardList = (data.data.cardList[0].data)
-        vue.caseList = (data.data.cardList[1].data).map((it)=>{
-            return {'image':it.cover,"text0": `${it.area}㎡/${it.style_name}/${it.house_type_name}/${it.zxtype_name}`,
-              "text1": `${it.province} ${it.address}`
-            }
+        vue.caseList = (data.data.cardList[1].data).map((it) => {
+          return {
+            'image': it.cover, "text0": `${it.area}㎡/${it.style_name}/${it.house_type_name}/${it.zxtype_name}`,
+            "text1": `${it.province} ${it.address}`
+          }
         })
         vue.designList = (data.data.cardList[2].data).map(function (it) {
-          return {'image': it.image, "text0": `${it.address}•${it.district}`,
-            "text1": `设计师:${it.designer}`}
+          return {
+            'image': it.image, "text0": `${it.address}•${it.district}`,
+            "text1": `设计师:${it.designer}`
+          }
         })
         vue.diaryList = (data.data.cardList[4].data).map(function (it) {
-          return {'image': it.cover_image, "text0": `${it.area}㎡/${it.style[0].value} ${it.style[1].value}`,
+          return {
+            'image': it.cover_image, "text0": `${it.area}㎡/${it.style[0].value} ${it.style[1].value}`,
             "text1": `${it.owner_name}`,
-          "text2":`${it.diary_content}`
+            "text2": `${it.diary_content}`
           }
         })
 
@@ -146,9 +164,7 @@
         diaryList: [],
       }
     },
-    methods: {
-
-    }
+    methods: {}
   };
 
 </script>
