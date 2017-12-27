@@ -1,10 +1,13 @@
 <style lang="stylus" type="text/stylus">
   .TabHome-component {
     background-color #eee
+    width 10rem
+    overflow hidden
   }
 
   slide
     height 620px
+    width 10rem
 
   img
     height 100%
@@ -44,11 +47,20 @@
     margin-bottom 40px
 
   .docProcess
+    background-color white
     .title
       span:not(:last-of-type)
         padding-right 10px
         display inline-block
         border-right 1px solid #999
+    .dots
+      span
+        width 15px
+        display block
+        height 15px
+        margin 0 5px
+        background-color #999
+        border-radius 50%
 
 
 </style>
@@ -91,8 +103,12 @@
         <span>装修中</span>
         <span>装修后</span>
       </div>
-      <span>www</span>
       <span>sss</span>
+      <div class="dots flex">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
     <!--登陆-->
     <div class="flex-column fjc-center fai-center">

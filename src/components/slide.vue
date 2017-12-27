@@ -1,9 +1,8 @@
-<style lang="stylus" type="text/stylus">
+<style lang="stylus" type="text/stylus" scoped>
   .slide-component {
     min-height 1px
     height 100%
     width 100vw
-    overflow hidden
     position relative
   }
 
