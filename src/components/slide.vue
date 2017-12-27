@@ -173,9 +173,7 @@
       _onScrollEnd() {
         let pageIndex = this.slide.getCurrentPage().pageX
         this.currentPageIndex = pageIndex
-        console.log(this.autoPlay)
         if (this.autoPlay) {
-          console.log("执行")
           this._play()
         }
       },
