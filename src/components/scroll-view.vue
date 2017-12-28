@@ -1,6 +1,5 @@
 <style lang="stylus" type="text/stylus">
   .scroll-view-component
-    background-color white
     width 100vw
 
   .wrapper

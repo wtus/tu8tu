@@ -1,4 +1,7 @@
 <style lang="stylus" type="text/stylus" scoped>
+  .indexProcess-component
+    background-color white
+    padding 50px 0
   .docProcess
     background-color white
     width 10rem
@@ -30,6 +33,7 @@
       padding-right 150px
       padding-top 50px
       padding-bottom 50px
+      padding-left 50px
 </style>
 
 <template>

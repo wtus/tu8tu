@@ -24,6 +24,7 @@
       width 490px
     .col2
       margin-left 30px
+      height 420px
       .card2
         width 476px
         height 193px
@@ -119,17 +120,24 @@
           <img :src="cardList[2].image" alt="" class="card3">
         </div>
       </div>
+      <divider mType="1"></divider>
       <!--装修案例-->
       <indexTitle mTitle="装修案例"></indexTitle>
       <indexGallery :mData="caseList"></indexGallery>
+      <divider mType="0"></divider>
       <!--土巴兔原创设计-->
       <indexTitle mTitle="土巴兔原创设计"></indexTitle>
       <indexGallery :mData="designList"></indexGallery>
+      <divider mType="1"></divider>
       <!--学装修-->
       <indexTitle mTitle="学装修"></indexTitle>
       <indexGallery :mData="learnList" :mPicWidth="4" :mPicHeight="2" :mShowShadow="true"></indexGallery>
       <!--装修进度-->
       <indexProcess></indexProcess>
+      <divider mType="1"></divider>
+      <!--日记-->
+      <indexTitle mTitle="日记"></indexTitle>
+      <divider mType="1"></divider>
       <!--问答专区-->
       <indexTitle mTitle="问答专区" :isQuestionTitle="true"></indexTitle>
       <!--登陆-->
