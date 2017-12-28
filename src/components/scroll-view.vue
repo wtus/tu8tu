@@ -2,18 +2,17 @@
   .scroll-view-component
     background-color white
     width 100vw
+
   .wrapper
     overflow hidden
-    height 100%
     .content
       white-space nowrap
-      display flex
 </style>
 
 <template>
   <div class="scroll-view-component">
-    <div class="wrapper" ref="wrapper">
-      <div class="content" ref="content">
+    <div class="wrapper" ref="wrapper" :style="{height:`${wrapperHeight}`}">
+      <div class="content" ref="content" :class="scrollX?'flex':'flex-column'">
         <slot></slot>
       </div>
     </div>
@@ -32,6 +31,7 @@
       isListenScroll: {type: Boolean, default: false},
       isListenScrollEnd: {type: Boolean, default: false},
       probeType: {type: Number, default: 1},
+      wrapperHeight: {type: String, default: "100%"},
     },
     mounted() {
       setTimeout(() => {
@@ -96,9 +96,9 @@
           })
         }
 
-        if(this.isListenScrollEnd) {
-          let vue=this
-          this.scroll.on('scrollEnd',()=>{
+        if (this.isListenScrollEnd) {
+          let vue = this
+          this.scroll.on('scrollEnd', () => {
             console.log('sa')
             vue.$emit('scrollEnd')
           })

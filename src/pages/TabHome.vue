@@ -93,51 +93,54 @@
 
 <template>
   <div class="TabHome-component">
-    <!--轮播图-->
-    <slide :autoPlay="true" :loop="true">
-      <div v-for="item in carouselList">
-        <a :href="item.linkurl">
-          <img :src="item.imgurl">
-        </a>
+    <scroll-view :scrollY="true" :isListenScroll="true" wrapperHeight="100vh" @scroll="onScroll">
+      <!--轮播图-->
+      <slide :autoPlay="true" :loop="true" ref="slide">
+        <div v-for="item in carouselList">
+          <a :href="item.linkurl">
+            <img :src="item.imgurl">
+          </a>
+        </div>
+      </slide>
+      <!--选项-->
+      <div class="selectionBar flex fjc-around fai-center">
+        <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle imgText="找设计" imgUrl="static/index_list_head_tag_zsj.png"></picTitle>
+        <picTitle imgText="看日记" imgUrl="static/index_list_head_tag_krj.png"></picTitle>
+        <picTitle imgText="提问题" imgUrl="static/index_list_head_tag_twt.png"></picTitle>
+        <picTitle imgText="逛商城" imgUrl="static/index_list_head_tag_gsc.png"></picTitle>
       </div>
-    </slide>
-    <!--选项-->
-    <div class="selectionBar flex fjc-around fai-center">
-      <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-      <picTitle imgText="找设计" imgUrl="static/index_list_head_tag_zsj.png"></picTitle>
-      <picTitle imgText="看日记" imgUrl="static/index_list_head_tag_krj.png"></picTitle>
-      <picTitle imgText="提问题" imgUrl="static/index_list_head_tag_twt.png"></picTitle>
-      <picTitle imgText="逛商城" imgUrl="static/index_list_head_tag_gsc.png"></picTitle>
-    </div>
-    <!--三个广告-->
-    <!--todo 这里从列表里面读数据会报错 cardList-->
-    <div class="cardList flex fjc-center">
-      <img :src="cardList[0].image" alt="" class="card1">
-      <div class="flex-column fjc-between col2">
-        <img :src="cardList[1].image" alt="" class="card2">
-        <img :src="cardList[2].image" alt="" class="card3">
+      <!--三个广告-->
+      <!--todo 这里从列表里面读数据会报错 cardList-->
+      <div class="cardList flex fjc-center">
+        <img :src="cardList[0].image" alt="" class="card1">
+        <div class="flex-column fjc-between col2">
+          <img :src="cardList[1].image" alt="" class="card2">
+          <img :src="cardList[2].image" alt="" class="card3">
+        </div>
       </div>
-    </div>
-    <!--装修案例-->
-    <indexTitle mTitle="装修案例"></indexTitle>
-    <indexGallery :mData="caseList"></indexGallery>
-    <!--土巴兔原创设计-->
-    <indexTitle mTitle="土巴兔原创设计"></indexTitle>
-    <indexGallery :mData="designList"></indexGallery>
-    <!--学装修-->
-    <indexTitle mTitle="学装修"></indexTitle>
-    <indexGallery :mData="learnList" :mPicWidth="4" :mPicHeight="2" :mShowShadow="true"></indexGallery>
-    <!--装修进度-->
-    <indexProcess></indexProcess>
-    <!--问答专区-->
-    <indexTitle mTitle="问答专区" :isQuestionTitle="true"></indexTitle>
-    <!--登陆-->
-    <div class="flex-column fjc-center fai-center">
-      <span class="login flex-center br-2">登录</span>
-      <span class="loginText">登录后，推荐可以更准确哦~</span>
-    </div>
+      <!--装修案例-->
+      <indexTitle mTitle="装修案例"></indexTitle>
+      <indexGallery :mData="caseList"></indexGallery>
+      <!--土巴兔原创设计-->
+      <indexTitle mTitle="土巴兔原创设计"></indexTitle>
+      <indexGallery :mData="designList"></indexGallery>
+      <!--学装修-->
+      <indexTitle mTitle="学装修"></indexTitle>
+      <indexGallery :mData="learnList" :mPicWidth="4" :mPicHeight="2" :mShowShadow="true"></indexGallery>
+      <!--装修进度-->
+      <indexProcess></indexProcess>
+      <!--问答专区-->
+      <indexTitle mTitle="问答专区" :isQuestionTitle="true"></indexTitle>
+      <!--登陆-->
+      <div class="flex-column fjc-center fai-center">
+        <span class="login flex-center br-2">登录</span>
+        <span class="loginText">登录后，推荐可以更准确哦~</span>
+      </div>
+    </scroll-view>
+
     <!--搜索栏-->
-    <div class="toolbar flex fjc-between fai-center">
+    <div class="toolbar flex fjc-between fai-center" ref="toolbar">
       <div class="item flex-center-column">
         <img src="static/index_ke_in.png" alt="">
         <span>客服</span>
@@ -154,9 +157,10 @@
       </div>
       <div class="item flex-center-column">
         <img src="static/index_msg_n.png" alt="">
-        <span>客服</span>
+        <span>消息</span>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -164,14 +168,12 @@
 
 
   import Slide from '../components/slide.vue'
-  import ScrollView from "../components/scroll-view.vue";
   import indexTitle from "../components/indexTitle.vue";
   import indexGallery from "../components/indexGallery.vue";
   import indexProcess from "../components/indexProcess.vue";
 
   export default {
     components: {
-      ScrollView,
       'slide': Slide,
       indexTitle,
       indexGallery,
@@ -232,7 +234,12 @@
         diaryList: [],
       }
     },
-    methods: {}
+    methods: {
+      onScroll(pos) {
+        console.log(pos.y / -this.$refs.slide.clientHeight)
+        this.$refs.toolbar.style.backgroundColor = `rgba(53, 193, 132, ${(pos.y / -186)})`
+      }
+    }
   };
 
 </script>
