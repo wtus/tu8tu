@@ -82,6 +82,9 @@
     <!--土巴兔原创设计-->
     <indexTitle mTitle="土巴兔原创设计"></indexTitle>
     <indexGallery :mData="designList"></indexGallery>
+    <!--学装修-->
+    <indexTitle mTitle="学装修"></indexTitle>
+    <indexGallery :mData="learnList" :mPicWidth="4" :mPicHeight="2" :mShowShadow="true"></indexGallery>
     <!--装修进度-->
     <indexProcess></indexProcess>
     <!--问答专区-->
@@ -135,6 +138,13 @@
             "text1": `设计师:${it.designer}`
           }
         })
+        vue.learnList = (data.data.cardList[3].data).map(function (it) {
+          return {
+            'image': it.image, "text0": `${it.title}`,
+            "text1": `讲师:${it.sjs_guest}`,
+            "text2": `${it.visitnum}`,
+          }
+        })
         vue.diaryList = (data.data.cardList[4].data).map(function (it) {
           return {
             'image': it.cover_image, "text0": `${it.area}㎡/${it.style[0].value} ${it.style[1].value}`,
@@ -155,6 +165,7 @@
         cardList: [],
         caseList: [],
         designList: [],
+        learnList: [],
         diaryList: [],
       }
     },

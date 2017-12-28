@@ -4,7 +4,6 @@
     justify-content space-between
     align-items center
     padding 56px 40px
-    margin-top 35px
     background-color white
     div
       span.title
