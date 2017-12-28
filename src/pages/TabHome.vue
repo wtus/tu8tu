@@ -44,24 +44,7 @@
     color #999
     margin-bottom 40px
 
-  .docProcess
-    background-color white
-    width 10rem
-    .title
-      span:not(:last-of-type)
-        padding-right 10px
-        display inline-block
-        border-right 1px solid #999
-    .dots
-      span
-        width 15px
-        display block
-        height 15px
-        margin 0 5px
-        background-color #999
-        border-radius 50%
-    .processData .processItem:not(:last-of-type)
-      padding-right 110px
+
 
 
 </style>
@@ -96,35 +79,11 @@
     <!--装修案例-->
     <indexTitle mTitle="装修案例"></indexTitle>
     <indexGallery :mData="caseList"></indexGallery>
+    <!--土巴兔原创设计-->
     <indexTitle mTitle="土巴兔原创设计"></indexTitle>
     <indexGallery :mData="designList"></indexGallery>
-    <div class="docProcess flex-center-column">
-      <div class="title">
-        <span>装修前</span>
-        <span>装修中</span>
-        <span>装修后</span>
-      </div>
-      <scroll-view :scrollX="true" class="processData">
-        <picTitle class="processItem" imgText="收房" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="设计" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="预算" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="合同" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="拆改" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="水电" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="防水" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="泥瓦" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="木工" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="油漆" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="竣工" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="软装" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-        <picTitle class="processItem" imgText="入住" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-      </scroll-view>
-      <div class="dots flex fjc-around">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
+    <!--装修进度-->
+    <indexProcess></indexProcess>
     <!--登陆-->
     <div class="flex-column fjc-center fai-center">
       <span class="login flex-center br-2">登录</span>
@@ -140,13 +99,15 @@
   import ScrollView from "../components/scroll-view.vue";
   import indexTitle from "../components/indexTitle.vue";
   import indexGallery from "../components/indexGallery.vue";
+  import indexProcess from "../components/indexProcess.vue";
 
   export default {
     components: {
       ScrollView,
       'slide': Slide,
       indexTitle,
-      indexGallery
+      indexGallery,
+      indexProcess
     },
     name: 'TabHome',
     props: {},
