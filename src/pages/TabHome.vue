@@ -224,7 +224,7 @@
             'image': it.cover_image, "text0": `${it.area}㎡/`,
             "text1": `${it.owner_name}`,
             "text2": `${it.diary_content}`,
-            "avatar":`${it.owner_avatar}`,
+            "avatar":`${it.owner_avatar?it.owner_avatar:'static/icon_head_photo_default.png'}`,
             "name":`${it.name}`
           }
         })
