@@ -10,7 +10,6 @@
     .imgDiv
       position relative
       div:nth-child(2)
-        width 7rem
         span
           position absolute
           top 125px
