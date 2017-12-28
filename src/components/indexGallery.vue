@@ -88,6 +88,7 @@
             <div class="flex-center">
               <span v-text="item.name"></span>
             </div>
+            <!--<img src="static/index_list_item_video.png" alt="">-->
           </div>
           <div class="text0" v-text="item.text0" v-if="!mIsDiary"></div>
           <div class="text1" v-if="!mIsDiary">
