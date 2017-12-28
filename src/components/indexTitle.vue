@@ -6,10 +6,11 @@
     padding 56px 40px
     margin-top 35px
     background-color white
-    span.title
-      font-size: 22px; /*no*/
-      vertical-align middle
-      color black
+    div
+      span.title
+        font-size: 21px; /*no*/
+        vertical-align middle
+        color black
     span.more
       color #999
       font-size: 14px; /*no*/
@@ -19,7 +20,10 @@
 
 <template>
   <div class="indexTitle-component">
-    <span class="title">{{mTitle}}</span>
+    <div>
+      <span class="title">{{mTitle}}</span>
+      <span class="more" v-if="isQuestionTitle">已有<span style="color: #35c184">6611871</span>为用户得到解答</span>
+    </div>
     <span class="more">更多<i class="iconfont icon-right-arrow"></i></span>
   </div>
 </template>
@@ -32,6 +36,7 @@
     props: {
       mTitle: {type: String, default: "标题"},
       mShowMore: {type: Boolean, default: true},
+      isQuestionTitle: {type: Boolean, default: false},
     },
     mounted() {
     },

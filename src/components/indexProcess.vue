@@ -87,7 +87,6 @@
     },
     methods: {
       onScroll(pos) {
-        console.log(pos)
         let offsetX = -pos.x
         if (offsetX < 282 || offsetX < 0) {
           this.activedIndex = 0

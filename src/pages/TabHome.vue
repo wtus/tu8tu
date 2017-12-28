@@ -84,6 +84,8 @@
     <indexGallery :mData="designList"></indexGallery>
     <!--装修进度-->
     <indexProcess></indexProcess>
+    <!--问答专区-->
+    <indexTitle mTitle="问答专区" :isQuestionTitle="true"></indexTitle>
     <!--登陆-->
     <div class="flex-column fjc-center fai-center">
       <span class="login flex-center br-2">登录</span>
