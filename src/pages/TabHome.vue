@@ -123,11 +123,17 @@
       <divider mType="1"></divider>
       <!--装修案例-->
       <indexTitle mTitle="装修案例"></indexTitle>
-      <indexGallery :mData="caseList"></indexGallery>
+      <indexGallery
+        :mIsShowSmallPic="true"
+        mSmallPic="static/index_list_item_3d.png"
+        :mData="caseList"></indexGallery>
       <divider mType="0"></divider>
       <!--土巴兔原创设计-->
       <indexTitle mTitle="土巴兔原创设计"></indexTitle>
-      <indexGallery :mData="designList"></indexGallery>
+      <indexGallery
+        :mIsShowSmallPic="true"
+        mSmallPic="static/index_list_item_video.png"
+        :mData="designList"></indexGallery>
       <divider mType="1"></divider>
       <!--学装修-->
       <indexTitle mTitle="学装修"></indexTitle>

@@ -18,12 +18,17 @@
           width 600px
           display inline-block
           margin-left 50px
-          margin-right  50px
-          font-size :17px;/*no*/
+          margin-right 50px
+          font-size: 17px; /*no*/
           color white
           text-overflow ellipsis
           overflow hidden
-
+      .smallPic
+        width 70px
+        height 70px
+        position absolute
+        right 20px
+        bottom 20px
 
   .showShadow
     box-shadow 1px 2px 15px #e1e2e0
@@ -88,7 +93,8 @@
             <div class="flex-center">
               <span v-text="item.name"></span>
             </div>
-            <!--<img src="static/index_list_item_video.png" alt="">-->
+            <img class="smallPic"  v-if="mIsShowSmallPic"
+                 :src="mSmallPic" alt="">
           </div>
           <div class="text0" v-text="item.text0" v-if="!mIsDiary"></div>
           <div class="text1" v-if="!mIsDiary">
@@ -131,6 +137,8 @@
       mPicHeight: {type: Number, default: 4},
       mShowShadow: {type: Boolean, default: false},
       mIsDiary: {type: Boolean, default: false},
+      mIsShowSmallPic: {type: Boolean, default: false},
+      mSmallPic: {type: String, required: true},
     },
     mounted() {
     },
