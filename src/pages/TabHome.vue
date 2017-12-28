@@ -137,6 +137,7 @@
       <divider mType="1"></divider>
       <!--日记-->
       <indexTitle mTitle="日记"></indexTitle>
+      <indexGallery :mData="diaryList" :mPicWidth="7" :mPicHeight="3" :mShowShadow="true" :mIsDiary="true"></indexGallery>
       <divider mType="1"></divider>
       <!--问答专区-->
       <indexTitle mTitle="问答专区" :isQuestionTitle="true"></indexTitle>
@@ -220,13 +221,15 @@
         })
         vue.diaryList = (data.data.cardList[4].data).map(function (it) {
           return {
-            'image': it.cover_image, "text0": `${it.area}㎡/${it.style[0].value} ${it.style[1].value}`,
+            'image': it.cover_image, "text0": `${it.area}㎡/`,
             "text1": `${it.owner_name}`,
-            "text2": `${it.diary_content}`
+            "text2": `${it.diary_content}`,
+            "avatar":`${it.owner_avatar}`,
+            "name":`${it.name}`
           }
         })
 
-        console.log(vue.designList)
+        console.log(vue.data.data.cardList[4].data)
       }).catch(function (err) {
         console.log(err)
       })
