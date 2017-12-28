@@ -44,7 +44,49 @@
     color #999
     margin-bottom 40px
 
+  .toolbar
+    width 10rem
+    height 168px
+    background-color rgba(53, 193, 132, 0)
+    position fixed
+    top 0
 
+    .searchBar
+      width 800px
+      height 100px
+      background-color white
+      color white
+      div:nth-child(1)
+        color black
+        img
+          width 55px
+          height 55px
+          margin 0 30px
+        span
+          font-size: 16px; /*no*/
+          vertical-align middle
+          line-height 2
+          color black
+      div:nth-child(2)
+        color #35c184
+        padding-right 10px
+        span
+          line-height 2
+          font-size: 13px; /*no*/
+          vertical-align middle
+          display inline-block
+        .icon-to-right
+          vertical-align middle
+
+    .item
+      margin 0 30px
+      img
+        width 60px
+        height 60px
+      span
+        font-size 10px /*no*/
+        color white
+        margin-top 5px
 
 
 </style>
@@ -93,6 +135,27 @@
     <div class="flex-column fjc-center fai-center">
       <span class="login flex-center br-2">登录</span>
       <span class="loginText">登录后，推荐可以更准确哦~</span>
+    </div>
+    <!--搜索栏-->
+    <div class="toolbar flex fjc-between fai-center">
+      <div class="item flex-center-column">
+        <img src="static/index_ke_in.png" alt="">
+        <span>客服</span>
+      </div>
+      <div class="searchBar br-10px flex fjc-between fai-center">
+        <div>
+          <img src="static/index_head_calculator.png" alt="">
+          <span>10秒装修报价</span>
+        </div>
+        <div>
+          <span>立即估算</span>
+          <i class="iconfont icon-to-right"></i>
+        </div>
+      </div>
+      <div class="item flex-center-column">
+        <img src="static/index_msg_n.png" alt="">
+        <span>客服</span>
+      </div>
     </div>
   </div>
 </template>
