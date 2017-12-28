@@ -60,6 +60,9 @@
         margin 0 5px
         background-color #999
         border-radius 50%
+    .processData .processItem:not(:last-of-type)
+      padding-right 110px
+
 
 </style>
 
@@ -101,38 +104,20 @@
         <span>装修中</span>
         <span>装修后</span>
       </div>
-      <scroll-view :scrollX="true" class="sss">
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle style="margin-left: 50px" imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
-          <picTitle imgText="学装修" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+      <scroll-view :scrollX="true" class="processData">
+        <picTitle class="processItem" imgText="收房" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="设计" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="预算" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="合同" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="拆改" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="水电" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="防水" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="泥瓦" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="木工" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="油漆" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="竣工" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="软装" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
+        <picTitle class="processItem" imgText="入住" imgUrl="static/index_list_head_tag_xzx.png"></picTitle>
       </scroll-view>
       <div class="dots flex fjc-around">
         <span></span>
