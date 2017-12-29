@@ -1,7 +1,6 @@
 <style lang="stylus" type="text/stylus" scoped>
   @import "../../static/common.styl"
   .water-fall-component {
-    width 963px
   }
 
   .container
@@ -21,7 +20,7 @@
 </style>
 
 <template>
-  <div class="water-fall-component">
+  <div class="water-fall-component" :style="{width:`${(mWidth-40)/108}rem`}">
     <div class="container" ref="container">
       <slot></slot>
     </div>
@@ -34,8 +33,9 @@
   export default {
     name: 'water-fall',
     props: {
-      column: {type: Number, default: 2},
-      space: {type: Number, default: 0},
+      mColumn: {type: Number, default: 2},
+      mSpace: {type: Number, default: 0},
+      mWidth: {type: Number, default: 1004},
     },
     mounted() {
       setTimeout(() => {
@@ -61,7 +61,7 @@
     },
     methods: {
       calcPosition() {
-        let column = this.column
+        let column = this.mColumn
         let columHeights = new Array(column) //用来保存每一列的当前起始高度
         for (let i = 0; i < column; i++) {
           columHeights[i] = 0
@@ -70,7 +70,7 @@
 
         let rem = parseFloat(window.getComputedStyle(document.documentElement)["fontSize"].replace("px", ""))
         let containerWidth = this.$refs.container.clientWidth
-        let space = this.space
+        let space = this.mSpace
         let imgs = this.$refs.container.children
         for (let i = 0; i < imgs.length; i++) {
           let columnIndex = i % column
@@ -93,7 +93,7 @@
          * 总结一下
          * 计算 rem
          *  1 已经渲染的px （除以）/window.rem
-         *  2 设计稿上的px （除以）/设计稿宽度的10分之一
+         *  2 设计稿上的px(属性里来的) （除以）/设计稿宽度的10分之一
          *  3 两个计算出的rem 可以相加减
          *
          * */
@@ -102,7 +102,7 @@
         var imgEle = ele.getElementsByTagName('test')[0]
 
         var alpha = imgEle.height / imgEle.width
-        var alpha2 = this.$refs.container.clientWidth / this.column - this.space / rem
+        var alpha2 = this.$refs.container.clientWidth / this.mColumn - this.mSpace / rem
         ele.style.width = `${alpha2}px`
         ele.style.height = `${alpha * alpha2}px`
         ele.style.top = `${i[columnIndex]}` + 'px'

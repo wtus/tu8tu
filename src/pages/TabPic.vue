@@ -37,7 +37,7 @@
       <div class=" flex-1 flex-center">风格</div>
       <div class=" flex-1 flex-center">空间</div>
     </div>
-    <water-fall :column="2" :space="40" class="wall" ref="waterFall">
+    <water-fall :mColumn="2" :mSpace="40" class="wall" ref="waterFall">
       <picItem
         v-for="item in picList"
         :mPicUrl="item.imgUrl"
