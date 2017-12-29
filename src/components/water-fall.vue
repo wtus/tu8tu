@@ -40,7 +40,7 @@
     mounted() {
       setTimeout(() => {
         this.calcPosition()
-      }, 20)
+      }, 50)
       let vue = this
       window.onresize = () => {
         return (() => {
