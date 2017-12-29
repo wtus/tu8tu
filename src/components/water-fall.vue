@@ -1,7 +1,7 @@
 <style lang="stylus" type="text/stylus" scoped>
   @import "../../static/common.styl"
   .water-fall-component {
-    width 995px
+    width 963px
   }
 
   .container
@@ -70,22 +70,34 @@
         for (let i = 0; i < imgs.length; i++) {
           var rowIndex = i % this.column
           console.log(rowIndex / this.column * 100)
-//          console.log("ssss"+window.getComputedStyle(document.documentElement)["fontSize"])// js 获取 rem 的 值
           var rem = parseFloat(window.getComputedStyle(document.documentElement)["fontSize"].replace("px", ""))
           imgs[i].style.position = `absolute`
-          imgs[i].style.width = `${this.$refs.container.clientWidth / this.column / rem}rem`
-          imgs[i].style.left = `${rowIndex / this.column * 100}%`
-          imgs[i].style.top = `${columHeights[rowIndex] / rem}rem`
+          imgs[i].style.width = `${(this.$refs.container.clientWidth) / this.column / rem}rem`
+          if(rowIndex!==0) {
+            console.log(rowIndex / this.column+this.space/108)
+            imgs[i].style.left = `${(rowIndex / this.column+this.space/(1080)) * 100}%`
+          }else {
+            imgs[i].style.left = `0%`
+          }
+          imgs[i].style.top = `${columHeights[rowIndex]}rem`
 //          this.setElement(imgs[i], columHeights, rowIndex)
-          columHeights[rowIndex] += imgs[i].clientHeight + this.space
+          columHeights[rowIndex] += imgs[i].clientHeight/rem + this.space/108
           console.log(columHeights)
+          /***
+           * 总结一下
+           * 计算 rem
+           *  1 已经渲染的px （除以）/window.rem
+           *  2 设计稿上的px （除以）/设计稿宽度的10分之一
+           *  3 两个计算出的rem 可以相加减
+           *
+           * */
         }
       },
       setElement(ele, i, rowIndex) {
         var imgEle = ele.getElementsByTagName('test')[0]
 
         var alpha = imgEle.height / imgEle.width
-        var alpha2 = this.$refs.container.clientWidth / this.column - this.space
+        var alpha2 = this.$refs.container.clientWidth / this.column - this.space/rem
         ele.style.width = `${alpha2}px`
         ele.style.height = `${alpha * alpha2}px`
         ele.style.top = `${i[rowIndex]}` + 'px'

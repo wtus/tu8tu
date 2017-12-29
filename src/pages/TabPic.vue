@@ -2,12 +2,14 @@
   .TabPic-component {
     height 1700px
   }
+  .wall
+    margin-left  40px
 
 </style>
 
 <template>
   <div class="TabPic-component flex">
-    <water-fall :column="2">
+    <water-fall :column="2" :space="40" class="wall">
       <picItem
         v-for="item in picList"
         :mPicUrl="item.imgUrl"
