@@ -70,7 +70,7 @@
         for (let i = 0; i < imgs.length; i++) {
           var rowIndex = i % this.column
           console.log(rowIndex / this.column * 100)
-//          console.log("ssss"+window.getComputedStyle(document.documentElement)["fontSize"])// js 获取rem 的 值
+//          console.log("ssss"+window.getComputedStyle(document.documentElement)["fontSize"])// js 获取 rem 的 值
           var rem=parseFloat(window.getComputedStyle(document.documentElement)["fontSize"].replace("px",""))
           imgs[i].style.position = `absolute`
           imgs[i].style.left = `${rowIndex / this.column * 100}%`
