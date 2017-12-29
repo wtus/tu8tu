@@ -1,7 +1,7 @@
 <style lang="stylus" type="text/stylus" scoped>
   @import "../../static/common.styl"
   .water-fall-component {
-    width 10rem
+    width 995px
   }
 
   .container
@@ -71,8 +71,9 @@
           var rowIndex = i % this.column
           console.log(rowIndex / this.column * 100)
 //          console.log("ssss"+window.getComputedStyle(document.documentElement)["fontSize"])// js 获取 rem 的 值
-          var rem=parseFloat(window.getComputedStyle(document.documentElement)["fontSize"].replace("px",""))
+          var rem = parseFloat(window.getComputedStyle(document.documentElement)["fontSize"].replace("px", ""))
           imgs[i].style.position = `absolute`
+          imgs[i].style.width = `${this.$refs.container.clientWidth / this.column / rem}rem`
           imgs[i].style.left = `${rowIndex / this.column * 100}%`
           imgs[i].style.top = `${columHeights[rowIndex] / rem}rem`
 //          this.setElement(imgs[i], columHeights, rowIndex)
