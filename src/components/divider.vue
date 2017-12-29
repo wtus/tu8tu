@@ -1,5 +1,6 @@
 <style lang="stylus" type="text/stylus" scoped>
   .divider-component {
+
   }
 
   .divider-line
@@ -10,7 +11,7 @@
 </style>
 
 <template>
-  <div class="divider-component">
+  <div class="divider-component" :style="{backgroundColor:`${mColor}`}">
     <div v-if="mType==='0'" class="divider-line"></div>
     <div v-if="mType==='1'" class="divider-bar"></div>
   </div>
@@ -23,7 +24,7 @@
     components: {},
     props: {
       mType: {type: String, default: "0"}, //类型 0-分割线 1-分割条
-      mColor: {type: String, default: "#eee"}, //颜色
+      mColor: {type: String, default: "#fff"}, //颜色
     },
     mounted() {
     },
