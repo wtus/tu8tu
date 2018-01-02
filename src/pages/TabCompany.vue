@@ -2,6 +2,7 @@
   .TabCompany-component {
     background-color #eee
   }
+
   .companyItem
     padding 50px 40px
 
@@ -16,8 +17,12 @@
   .toRight
     position absolute
     right 0
+
   .col0
     width 216px
+  .logoImg
+    width 42px
+    height  42px
 </style>
 
 <template>
@@ -43,14 +48,14 @@
       <div class="line1 flex fai-top">
         <div class="col0 flex-column fai-center">
           <rankbar :sore="4.8" :starSize="5"></rankbar>
-          <div>评论</div>
+          <div></div>
         </div>
-        <div >
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
+        <div>
+          <div class="flex fai-center">
+            <img src="https://pic.to8to.com/hot/819_8560.png?1506570388" class="logoImg">
+            <span>sssss</span>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
