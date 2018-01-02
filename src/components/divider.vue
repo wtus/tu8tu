@@ -24,7 +24,7 @@
     components: {},
     props: {
       mType: {type: String, default: "0"}, //类型 0-分割线 1-分割条
-      mColor: {type: String, default: "#fff"}, //颜色
+      mColor: {type: String, default: "#eee"}, //颜色
     },
     mounted() {
     },

@@ -3,22 +3,33 @@
     height 1700px
     background-color #eee
   }
+
   .tabBar0
     height 170px
     position relative
+    background-color white
     .tab0
-      font-size : 20px;/*no*/
+      font-size: 20px; /*no*/
       color black
+      width 150px
+      height 100%
+      padding-bottom -6px
+    .activied
+      color green
+      border-bottom 12px solid green
     img
       position absolute
+      width 55px
+      height 55px
       right 45px
       bottom 63px
 
   .tabBar1
     height 130px
+    background-color white
 
   .wall
-    margin-left  40px
+    margin-left 40px
     margin-top 40px
 
 </style>
@@ -26,13 +37,13 @@
 <template>
   <div class="TabPic-component flex-column">
     <div class="flex-center tabBar0">
-      <div class="tab0">定制</div>
-      <div class="tab0">全景</div>
-      <div class="tab0">套图</div>
-      <div class="tab0">单图</div>
+      <div class="tab0 flex-center activied">定制</div>
+      <div class="tab0 flex-center">全景</div>
+      <div class="tab0 flex-center">套图</div>
+      <div class="tab0 flex-center">单图</div>
       <img src="static/ic_search.png" alt="">
     </div>
-    <divider mType="1"></divider>
+    <divider mType="0"></divider>
     <div class="flex tabBar1">
       <div class=" flex-1 flex-center">风格</div>
       <div class=" flex-1 flex-center">空间</div>
@@ -73,7 +84,7 @@
         })
         setTimeout(function () {
           this.$refs.waterFall.calcPosition()
-        },20)
+        }, 20)
       }).catch((err) => {
         console.log(err)
       })
