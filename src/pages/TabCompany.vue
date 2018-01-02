@@ -14,23 +14,32 @@
     .logo
       height 38px
 
+  .line1
+    margin-top 25px
+
   .toRight
     position absolute
     right 0
 
   .col0
     width 216px
+
   .logoImg
     width 42px
-    height  42px
+    height 42px
+  .rightPart
+    margin-left 32px
+  .logoImgDiv:not(:first-of-type)
+    margin-top 20px
 </style>
 
 <template>
   <div class="TabCompany-component">
     <div class="companyItem flex-column">
+
       <div class="line0 flex fai-center">
         <img src="https://pic.to8to.com/user/8/headphoto_573608.jpg?1432272581" class="pic">
-        <div class="flex-column flex-1" style="position: relative">
+        <div class="flex-column flex-1 rightPart" style="position: relative">
           <div>
             <span>百川装饰</span>
             <img src="static/company_auth.png" class="logo">
@@ -48,10 +57,14 @@
       <div class="line1 flex fai-top">
         <div class="col0 flex-column fai-center">
           <rankbar :sore="4.8" :starSize="5"></rankbar>
-          <div></div>
+          <div>(1条评论)</div>
         </div>
-        <div>
-          <div class="flex fai-center">
+        <div class="rightPart">
+          <div class="flex fai-center logoImgDiv">
+            <img src="https://pic.to8to.com/hot/819_8560.png?1506570388" class="logoImg">
+            <span>sssss</span>
+          </div>
+          <div class="flex fai-center logoImgDiv">
             <img src="https://pic.to8to.com/hot/819_8560.png?1506570388" class="logoImg">
             <span>sssss</span>
           </div>

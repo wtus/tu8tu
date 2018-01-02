@@ -55,6 +55,7 @@
   }
 
   .rank-start {
+    margin: 5px 5px;
     width: 28px;
     display: inline-block;
     height: 28px;
