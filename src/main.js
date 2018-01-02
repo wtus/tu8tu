@@ -14,7 +14,6 @@ import imgcard from './components/imgcard.vue'
 import rankbar from './components/rankbar.vue'
 import tab from './components/tab.vue'
 import tabbar from './components/tabbar.vue'
-import companyItem from './components/companyItem.vue'
 import scrollView from './components/scroll-view.vue'
 import waterFall from './components/water-fall.vue'
 import picTitle from './components/picTitle.vue'
@@ -48,7 +47,6 @@ Vue.component(TabPic.name, TabPic);
 Vue.component(TabCompany.name, TabCompany);
 Vue.component(TabMe.name, TabMe);
 Vue.component(TabNewHouse.name, TabNewHouse);
-Vue.component(companyItem.name, companyItem);
 Vue.component(scrollView.name, scrollView);
 Vue.component(waterFall.name, waterFall);
 Vue.component(picTitle.name, picTitle);
