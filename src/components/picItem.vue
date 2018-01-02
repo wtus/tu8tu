@@ -3,7 +3,7 @@
   }
 
   .picItem
-    border-radius 15px
+    border-radius 5px
     overflow hidden
     box-shadow: 2px 2px 13px #333333
 

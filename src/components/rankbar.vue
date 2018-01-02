@@ -49,21 +49,15 @@
 </script>
 
 <style scoped>
-  .rankbar-component {
-    background-color: white;
-  }
 
   .rank-bar {
-    height: 100px;
-    width: 200px;
-    text-align: center;
-    line-height: 100px;
+    display: flex;
   }
 
   .rank-start {
-    width: 10%;
+    width: 28px;
     display: inline-block;
-    height: 20%;
+    height: 28px;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("../assets/ic_star_on.png");

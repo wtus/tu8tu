@@ -10,6 +10,7 @@ import Test6 from '../pages/Test6.vue'
 import Test7 from '../pages/Test7.vue'
 import Home from '../pages/TabHome.vue'
 import TabPic from '../pages/TabPic.vue'
+import TabCompany from '../pages/TabCompany.vue'
 
 Vue.use(Router)
 
@@ -37,8 +38,8 @@ export default new Router({
     } ,
     {
       path: '/t3',
-      name: Test3.name,
-      component: Test3
+      name: TabCompany.name,
+      component: TabCompany
     },
     {
       path: '/t4',
