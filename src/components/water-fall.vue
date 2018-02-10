@@ -48,7 +48,6 @@
           vue.calcPosition()
         })()
       }
-
     },
     activated() {
     },
