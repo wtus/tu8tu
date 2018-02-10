@@ -40,7 +40,8 @@
     mounted() {
       setTimeout(() => {
         this.calcPosition()
-      }, 50)
+        console.log("1111111111")
+      }, 1000)
       let vue = this
       window.onresize = () => {
         return (() => {
@@ -82,7 +83,7 @@
           if (columnIndex !== 0) {
             console.log(columnIndex / column + space / 108)
             //eleItem.style.left = `${(columnIndex / column + space / (1004)) * 100}%`
-            eleItem.style.left = `${(containerWidth) / column / rem*columnIndex+space / 108}rem`
+            eleItem.style.left = `${(containerWidth) / column / rem * columnIndex + space / 108}rem`
           } else {
             eleItem.style.left = `0%`
           }
