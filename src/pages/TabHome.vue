@@ -152,6 +152,8 @@
         <span class="login flex-center br-2">登录</span>
         <span class="loginText">登录后，推荐可以更准确哦~</span>
       </div>
+
+      <div style="height: 100px"></div>
     </scroll-view>
 
     <!--搜索栏-->
@@ -175,6 +177,7 @@
         <span>消息</span>
       </div>
     </div>
+
 
   </div>
 </template>

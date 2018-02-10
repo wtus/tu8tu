@@ -1,11 +1,11 @@
 <template>
 
   <tabbar class="tabbar">
-
-    <tab tabTitle="图库" nIcon="../static/main_tab_pic_n.png" aIcon="../static/main_tab_pic_p.png"><TabPic></TabPic></tab>
     <tab tabTitle="首页" nIcon="./static/main_tab_home_n.png" aIcon="./static/main_tab_home_p.png">
       <TabHome></TabHome>
     </tab>
+
+    <tab tabTitle="图库" nIcon="../static/main_tab_pic_n.png" aIcon="../static/main_tab_pic_p.png"><TabPic></TabPic></tab>
 
     <tab tabTitle="新房" nIcon="../static/icon_newhouse_p.png" aIcon="../static/icon_newhouse_p.png"><TabHome></TabHome></tab>
     <tab tabTitle="装修公司" nIcon="../static/main_tab_company_n.png" aIcon="../static/main_tab_company_p.png" ><div style="background-color: cyan">
