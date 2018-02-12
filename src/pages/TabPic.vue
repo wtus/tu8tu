@@ -48,6 +48,7 @@
       <div class=" flex-1 flex-center">风格</div>
       <div class=" flex-1 flex-center">空间</div>
     </div>
+
     <water-fall :mColumn="2" :mSpace="40" class="wall" ref="waterFall">
       <picItem
         v-for="item in picList"
@@ -57,7 +58,6 @@
         class="test"
         :mPicWidth="482"></picItem>
     </water-fall>
-
   </div>
 </template>
 

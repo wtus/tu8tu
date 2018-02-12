@@ -39,6 +39,10 @@
   .is-active {
     color: red;
   }
+
+  .cootent
+    margin-bottom 120px
+    overflow auto
 </style>
 
 <template>
