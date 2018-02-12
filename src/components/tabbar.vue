@@ -79,7 +79,10 @@
     props: {},
     mounted() {
       this.tabs = this.$children
-      this.tabs[0].isActive = true
+      this.tabs.forEach(function (it) {
+        it.isActive = true
+      })
+//      this.selectTab('首页')
     },
     computed: {},
     data() {
