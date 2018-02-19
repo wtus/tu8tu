@@ -22,8 +22,15 @@ import TabPic from './pages/TabPic.vue'
 import TabCompany from './pages/TabCompany.vue'
 import TabMe from './pages/TabMe.vue'
 import TabNewHouse from './pages/TabNewHouse.vue'
+import toast from './components/toast/toast.js'
+import qr from './components/toast/Qrcode.vue'
 
 Vue.config.productionTip = false;
+
+
+if(!window.install) {// 之前用的是 mixin 的 beforeCreate，具体哪一个好我也不知道
+  Vue.prototype.$toast=toast
+}
 
 Vue.mixin({
   beforeCreate() {
@@ -47,6 +54,8 @@ Vue.component(scrollView.name, scrollView);
 Vue.component(waterFall.name, waterFall);
 Vue.component(picTitle.name, picTitle);
 Vue.component(divider.name, divider);
+Vue.component(qr.name, qr);
+
 
 /* eslint-disable no-new */
 new Vue({

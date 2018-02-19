@@ -3,7 +3,7 @@
   }
 
   .tabs
-    background-color #6cff3c
+    background-color white
     display flex
     width 1080px
     position fixed
@@ -34,10 +34,9 @@
           margin-bottom 0
           width 70px * 0.8
           height @width
-          box-shadow 0px 0px 5px red
 
   .is-active {
-    color: red;
+    color: #35c184;
   }
 
   .cootent
@@ -82,6 +81,16 @@
     name: 'tabbar',
     props: {},
     mounted() {
+      if (!('ontouchstart' in window)) {//检测 是不是移动设备
+        this.$toast({
+          mHeight:'100%',
+          mWidth:'100%',
+          msg: '请使用手机浏览器查看,或者使用浏览器调试模式查看',
+          showQcode: true,
+          duration: 10000
+        }).show()
+      }
+
       this.tabs = this.$children
       this.tabs.forEach(function (it) {
         it.isActive = true

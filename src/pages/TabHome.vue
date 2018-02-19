@@ -200,6 +200,9 @@
     name: 'TabHome',
     props: {},
     mounted() {
+
+
+
       var vue = this
       this.$api.getCarouselData().then(function (data) {
         vue.carouselList = (data.data.bannerInfo)

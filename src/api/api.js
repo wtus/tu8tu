@@ -6,7 +6,7 @@ export default {
   //获取首页数据
   getIndexData() {
     return fetch({
-      url: url.pre_url+"/eggV_5_0",
+      url: url.pre_url,
       method: 'get',
       params: {
         action: "eggV_5_0",
@@ -23,7 +23,7 @@ export default {
   //获取轮播图
   getCarouselData() {
     return fetch({
-      url: url.pre_url+"/getv_3_6",
+      url: url.pre_url,
       method: 'get',
       params: {
         module: "ad",
@@ -41,7 +41,7 @@ export default {
   //获取图库-定制
   getGalleryCustomData() {
     return fetch({
-      url: url.pre_url2+"/list2",
+      url: url.pre_url2,
       method: 'get',
       params: {
         module: "works",
@@ -60,7 +60,7 @@ export default {
   //获取图库-全景
   getGallery3DData() {
     return fetch({
-      url: url.pre_url+"/threedlist",
+      url: url.pre_url,
       method: 'post',
       data: {
         action: "threedlist",
@@ -80,7 +80,7 @@ export default {
   //获取图库-套图
   getGallerySetsPicData() {
     return fetch({
-      url: url.pre_url+"/setsList",
+      url: url.pre_url,
       method: 'post',
       data: {
         action: "setsList",
@@ -102,7 +102,7 @@ export default {
   //获取图库-单图
   getGalleryOnePicData() {
     return fetch({
-      url: url.pre_url+"/list",
+      url: url.pre_url,
       method: 'post',
       data: {
         action: "list",
@@ -125,7 +125,7 @@ export default {
   //获取装修公司列表
   getDecorationConpanyList() {
     return fetch({
-      url: url.pre_url+"/Index",
+      url: url.pre_url,
       method: 'post',
       data: {
         action: "Index",

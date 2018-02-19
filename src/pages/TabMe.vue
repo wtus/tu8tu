@@ -1,6 +1,5 @@
 <style lang="stylus" scoped>
   .TabMe-component {
-    background-color: #ff4977;
   }
 
   .TabMe-component
@@ -9,6 +8,7 @@
 
 <template>
   <div class="TabMe-component">
+    6666666666666666
   </div>
 </template>
 
