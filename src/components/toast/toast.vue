@@ -51,7 +51,7 @@
   <transition name="toast-fade" v-on:after-leave="transitionEnd">
     <div class="toast-component" :class="{qcode:showQcode}" :style="mStyle" ref="toast"
          v-show="visible">
-      <div>{{msg}}</div>
+      <div style="color: gainsboro">{{msg}}</div>
       <qrcode v-if="showQcode" :val="href" style="margin: 10px"></qrcode>
     </div>
   </transition>

@@ -6,6 +6,7 @@
 
 <template>
     <div class="TabNewHouse-component">
+      1111111111111111111
     </div>
 </template>
 

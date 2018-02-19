@@ -85,9 +85,9 @@
         this.$toast({
           mHeight:'100%',
           mWidth:'100%',
-          msg: '请使用手机浏览器查看,或者使用浏览器调试模式查看',
+          msg: '请使用手机浏览器查看,或者按F12选择手机浏览器模式查看',
           showQcode: true,
-          duration: 10000
+          duration: 100000
         }).show()
       }
 

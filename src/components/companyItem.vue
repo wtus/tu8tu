@@ -44,13 +44,13 @@
   <div class="companyItem flex-column">
 
     <div class="line0 flex fai-center">
-      <img src="https://pic.to8to.com/user/8/headphoto_573608.jpg?1432272581" class="pic">
+      <img :src="mData.imgUrl" class="pic">
       <div class="flex-column flex-1 rightPart" style="position: relative">
         <div>
           <span>{{mData.name}}</span>
           <img src="static/company_auth.png" class="logo logo1">
           <img src="static/company_1.png" class="logo">
-          <span class="toRight">广告</span>
+          <span class="toRight" v-show="false">广告</span>
         </div>
         <div>
           <span>设计案例：{{mData.caseNum}}</span>
