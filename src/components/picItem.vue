@@ -27,8 +27,10 @@
 <template>
   <div class="picItem-component">
     <div class="flex-column picItem">
-      <img :src="mPicUrl"
-           :style="imgStyle">
+      <img
+        @load="imageLoaded"
+        :src="mPicUrl"
+        :style="imgStyle">
       <div class="flex fai-center belowContent" v-if="mShowContent">
         <div style="margin-left: 10px">
           <img class="avatar" :src="mAvatar" alt="" v-if="mShowAvatar">
@@ -70,7 +72,11 @@
     data() {
       return {}
     },
-    methods: {},
+    methods: {
+      imageLoaded() {
+        this.$emit('imageLoaded')
+      }
+    },
     watch: {}
   };
 

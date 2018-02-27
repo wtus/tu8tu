@@ -1,4 +1,4 @@
-<style lang="stylus" type="text/stylus" scoped>
+<style lang="stylus" type="text/stylus">
   .tabbar-component {
   }
 
@@ -42,6 +42,10 @@
   .cootent
     margin-bottom 120px
     overflow auto
+
+  .tabImg
+    width 50px
+    height 50px
 </style>
 
 <template>
@@ -59,14 +63,16 @@
         </div>
 
         <div v-else-if="tab.isActive===true">
-          <div style="width: 24px;height: 24px;background-size:contain"
-               :style="{ backgroundImage:  'url('+tab.aIcon+')'  }"></div>
+          <!-- <div style="width: 24px;height: 24px;background-size:contain"
+                :style="{ backgroundImage:  'url('+tab.aIcon+')'  }"></div>-->
+          <img :src="tab.aIcon" alt="" class="tabImg">
           {{tab.tabTitle}}
         </div>
 
         <div v-else-if="tab.isActive===false">
-          <div style="width: 24px;height: 24px;;background-size:contain"
-               :style="{ backgroundImage:  'url('+tab.nIcon+')'  }"></div>
+          <!--<div style="width: 24px;height: 24px;;background-size:contain"
+               :style="{ backgroundImage:  'url('+tab.nIcon+')'  }"></div>-->
+          <img :src="tab.nIcon" alt="" class="tabImg">
           {{tab.tabTitle}}
         </div>
 
@@ -83,8 +89,8 @@
     mounted() {
       if (!('ontouchstart' in window)) {//检测 是不是移动设备
         this.$toast({
-          mHeight:'100%',
-          mWidth:'100%',
+          mHeight: '100%',
+          mWidth: '100%',
           msg: '请使用手机浏览器查看,或者按F12选择手机浏览器模式查看',
           showQcode: true,
           duration: 100000
@@ -95,6 +101,7 @@
       this.tabs.forEach(function (it) {
         it.isActive = true
       })
+      this.tabs[0].isActive = true
 //      this.selectTab('首页')
     },
     computed: {},

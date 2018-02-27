@@ -53,6 +53,7 @@
       <picItem
         v-for="item in picList"
         :mPicUrl="item.imgUrl"
+        v-on:imageLoaded="onImageLoaded"
         :mAvatar="item.avatar"
         :mText0="item.text0"
         class="test"
@@ -95,7 +96,11 @@
         picList: []
       }
     },
-    methods: {}
+    methods: {
+      onImageLoaded() {
+        this.$refs.waterFall.calcPosition()
+      }
+    }
   };
 
 </script>
